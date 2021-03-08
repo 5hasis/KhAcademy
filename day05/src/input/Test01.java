@@ -12,9 +12,6 @@ public class Test01 {
 		int a = System.in.read();
 		System.out.println("a = " + a);
 		
-		
-		System.in.read();
-		
 		//enter => \r\n
 	}
 
