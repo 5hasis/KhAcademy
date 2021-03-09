@@ -13,9 +13,11 @@ public class Test06 {
 		sc.close();
 		
 		//나이를 계산 후 요금을 구하여 출력
+		//Calendar.getInstance().get(Calendar.YEAR);
 		int age = 2021 - year + 1;
 		
 		if(year > 1900 && year <= 2021) {
+			
 			System.out.print(age + "세의 지하철 요금은 ");
 			if(age > 65 || age < 8) 
 				System.out.println("무료");
