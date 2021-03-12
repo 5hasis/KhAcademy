@@ -18,7 +18,12 @@ public class Test09 {
 		
 		//굳이 최소값변수 지정할 필요 X, 인덱스 찾아서 값 가져오기
 		//int min = arr[0];
+		
+//		최소값 위치 찾는 과정
+//		1. 맨 앞 위치(+0지점)가 가장 작은 값이라고 가정
 		int idx = 0;
+		
+//		2. 1번부터 끝까지 반복하며 idx의 위치에 들어있는 값과 비교
 		for(int i = 0; i < arr.length; i++) {
 			if(arr[idx] > arr[i]) {
 				arr[idx] = arr[i];
