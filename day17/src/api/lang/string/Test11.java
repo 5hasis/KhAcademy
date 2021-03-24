@@ -13,6 +13,7 @@ public class Test11 {
 		String regex = "^[a-z0-9-_]{5,20}$"; //검사식
 		
 		//System.out.println(Pattern.matches(regex, id));
+		//java.util.Pattern 패키지
 		if(Pattern.matches(regex, id)) {
 			System.out.println("올바른 아이디입니다.");
 		}
