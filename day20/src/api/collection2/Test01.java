@@ -35,6 +35,7 @@ public class Test01 {
 		System.out.println(set);
 		
 		//삭제 : remove()
-		//System.out.println(set.remove(set));
+		set.remove(29);
+		System.out.println(set);
 	}
 }
