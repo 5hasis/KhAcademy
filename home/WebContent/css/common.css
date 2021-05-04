@@ -313,3 +313,10 @@ textarea.form-input {
 	display:block;
 	clear:both;
 }
+
+.float-container > .left {
+	float:left;
+}
+.float-container > .right {
+	float:right;
+}
