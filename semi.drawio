@@ -1,1 +1,192 @@
-<mxfile host="app.diagrams.net" modified="2021-05-19T08:26:40.260Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" version="14.6.12" etag="4_bFAEVPVBb03YRvBaJm" type="github"><diagram id="tWUlsx1ttD2VlI3Jn7RU">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2021-05-20T04:43:12.003Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" etag="9OugYwsqJMOI4SEISK5i" version="14.6.12" type="github">
+  <diagram id="tWUlsx1ttD2VlI3Jn7RU" name="Page-1">
+    <mxGraphModel dx="2283" dy="829" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-1" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="71" y="229" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-3" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="183" y="83" width="486" height="370" as="geometry" />
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-7" value="출/퇴근 목록&lt;br&gt;attendList.jsp" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="257" y="238" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-12" value="" style="endArrow=classic;html=1;entryX=-0.017;entryY=0.37;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="101" y="267.1065340909091" as="sourcePoint" />
+            <mxPoint x="254.96000000000004" y="268.20000000000005" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-13" value="출근&lt;br&gt;attend.gw" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="257" y="134" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-16" value="" style="endArrow=classic;html=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="301" y="194" as="sourcePoint" />
+            <mxPoint x="301" y="237" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-17" value="" style="endArrow=classic;html=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="329" y="238" as="sourcePoint" />
+            <mxPoint x="329" y="194" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-23" value="" style="endArrow=classic;html=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="333" y="298" as="sourcePoint" />
+            <mxPoint x="333" y="341" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-24" value="" style="endArrow=classic;html=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="301" y="342" as="sourcePoint" />
+            <mxPoint x="301" y="298" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="301" y="359" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-14" value="퇴근&lt;br&gt;leave.gw" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="261" y="342" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-25" value="" style="endArrow=classic;html=1;" edge="1" parent="1" source="IyHuPHh3DacPDzzkwzZm-7" target="IyHuPHh3DacPDzzkwzZm-26">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="377" y="318" as="sourcePoint" />
+            <mxPoint x="447.71067811865476" y="268" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-27" value="날짜&lt;br&gt;사원번호" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="IyHuPHh3DacPDzzkwzZm-25">
+          <mxGeometry x="-0.3061" y="-2" relative="1" as="geometry">
+            <mxPoint x="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-26" value="근태 상세보기&lt;br&gt;attendDetail.jsp" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="475" y="238" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-28" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-688" y="83" width="684" height="370" as="geometry" />
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="IyHuPHh3DacPDzzkwzZm-29" target="IyHuPHh3DacPDzzkwzZm-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="IyHuPHh3DacPDzzkwzZm-29" target="IyHuPHh3DacPDzzkwzZm-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-42" value="휴가 번호" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="IyHuPHh3DacPDzzkwzZm-41">
+          <mxGeometry x="0.2075" relative="1" as="geometry">
+            <mxPoint x="11" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-29" value="휴가 신청 목록&lt;br&gt;holidayList.jsp" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="-184" y="236" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-31" value="" style="endArrow=classic;html=1;" edge="1" parent="1" target="IyHuPHh3DacPDzzkwzZm-29">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="71" y="266" as="sourcePoint" />
+            <mxPoint x="0.28932188134524495" y="266" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" target="IyHuPHh3DacPDzzkwzZm-38">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-184" y="164" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-40" value="휴가 내용&lt;br&gt;시작 일시&lt;br&gt;종료 일시" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="IyHuPHh3DacPDzzkwzZm-39">
+          <mxGeometry x="-0.1698" y="-2" relative="1" as="geometry">
+            <mxPoint x="-6" y="2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-32" value="휴가 신청(입력)&lt;br&gt;holodayInsert.jsp" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="-184" y="130" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-363" y="296" as="sourcePoint" />
+            <mxPoint x="-363" y="347" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-37" value="휴가 번호" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="IyHuPHh3DacPDzzkwzZm-36">
+          <mxGeometry x="-0.2642" y="-1" relative="1" as="geometry">
+            <mxPoint x="1" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="IyHuPHh3DacPDzzkwzZm-34" target="IyHuPHh3DacPDzzkwzZm-47">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-322" y="319" />
+              <mxPoint x="-210" y="319" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-51" value="휴가 번호" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="IyHuPHh3DacPDzzkwzZm-48">
+          <mxGeometry x="-0.1607" y="-1" relative="1" as="geometry">
+            <mxPoint x="11" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-34" value="휴가 상세보기&lt;br&gt;holidayDetail.jsp" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="-410" y="236" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="IyHuPHh3DacPDzzkwzZm-35" target="IyHuPHh3DacPDzzkwzZm-52">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-54" value="휴가 번호&lt;br&gt;휴가 내용&lt;br&gt;시작 일시&lt;br&gt;종료 일시" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="IyHuPHh3DacPDzzkwzZm-53">
+          <mxGeometry x="0.2955" y="2" relative="1" as="geometry">
+            <mxPoint x="18" y="-2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-35" value="휴가 신청 수정&lt;br&gt;holidayUpdate.jsp" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="-410" y="347" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="IyHuPHh3DacPDzzkwzZm-38" target="IyHuPHh3DacPDzzkwzZm-29">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-350" y="212" />
+              <mxPoint x="-146" y="212" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-38" value="휴가 신청(처리)&lt;br&gt;holidayInsert.gw" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="-410" y="134" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="IyHuPHh3DacPDzzkwzZm-47" target="IyHuPHh3DacPDzzkwzZm-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-47" value="휴가 신청 수정&lt;br&gt;holidayUpdate.jsp" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="-235" y="347" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="IyHuPHh3DacPDzzkwzZm-52" target="IyHuPHh3DacPDzzkwzZm-34">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-587" y="266" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-56" value="휴가 번호" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="IyHuPHh3DacPDzzkwzZm-55">
+          <mxGeometry x="-0.4481" y="-3" relative="1" as="geometry">
+            <mxPoint x="-3" y="20" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-52" value="휴가 신청 수정(처리)&lt;br&gt;holidayUpdate.gw" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="-647" y="347" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-57" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="183" y="526" width="334" height="148" as="geometry" />
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-59" value="급여 상세보기&lt;br&gt;salaryDetail.jsp" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="257" y="564" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="IyHuPHh3DacPDzzkwzZm-58" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="IyHuPHh3DacPDzzkwzZm-1" target="IyHuPHh3DacPDzzkwzZm-59">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="86" y="596" />
+              <mxPoint x="303" y="596" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
