@@ -18,8 +18,8 @@ public class Test02_1 {
 		ResultSet rs = ps.executeQuery();
 		
 		while(rs.next()) {
-			System.out.print(rs.getInt("no"));//no라는 컬럼의 값을 출력
-			//System.out.print(rs.getInt(1));//1번째 컬럼의 값을 출력
+			System.out.print(rs.getInt("no"));//no라는 컬럼의 값을 출력.
+			//System.out.print(rs.getInt(1));//1번째 컬럼의 값을 출력.
 			System.out.print("/");
 			System.out.print(rs.getString("name"));
 			System.out.print("/");

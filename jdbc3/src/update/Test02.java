@@ -15,6 +15,7 @@ public class Test02 {
 		int product_no = sc.nextInt();
 		System.out.print("수정할 가격 입력 : ");
 		int product_price = sc.nextInt();
+		sc.close();
 		
 		Class.forName("oracle.jdbc.OracleDriver");
 		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "study", "study");
