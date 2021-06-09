@@ -29,7 +29,7 @@
 	- InetAddress : 접속 주소에 대한 유효성 검사 및 정보 분석(cf : nslookup)
 - TCP : 
 	- ServerSocket : 사용자의 접속을 대기할 수 있는 서버용 도구
-	- Socket : TCP 통신 연결 정보 객체. 스트림이 내장되어 있어 꺼내어 사용
+	- Socket : TCP 통신 연결 정보 객체. 스트림이 내장되어 있어 꺼내어 사용.
 - UDP : 
 	- DatagramSocket : UDP 방식의 전송/수신을 처리하는 도구
 	- DatagramPacket : UDP 방식에서 데이터그램 형태의 전송 
