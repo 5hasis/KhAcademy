@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class Test09 {
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 		// 사용자에게 번호를 입력받아 product 테이블에서 해당 번호의 상품정보 출력
-		// 없으면 없다고 출력
+		// 없으면 없다고 출력.
 		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("번호 입력 : ");
