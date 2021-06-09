@@ -23,7 +23,7 @@ public class Test03_2 {
 			Connection con = DriverManager.getConnection(
 					"jdbc:oracle:thin:@localhost:1521:xe", "study", "study");
 			
-			//자동 커밋 설정 해제(앞으로 사용하지 않음)
+			//자동 커밋 설정 해제(앞으로 사용하지 않음).
 			con.setAutoCommit(false);
 			
 			String sql = "insert into character(character_no, character_name) "

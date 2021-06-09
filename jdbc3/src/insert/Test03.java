@@ -24,8 +24,8 @@ public class Test03 {
 		
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setString(1,character_id);
-//		ps.setInt(2, character_level);
-//		ps.setInt(3, character_money);
+//		ps.setInt(2,character_level);
+//		ps.setInt(3,character_money);
 		
 		ps.execute();
 		

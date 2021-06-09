@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class Test03_1 {
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
-//		Q : 아이디가 중복될 경우 발생하는 예외와 해결책
+//		Q : 아이디가 중복될 경우 발생하는 예외와 해결책.
 //		A : java.sql.SQLIntegrityConstraintViolationException 발생, try~catch로 처리
 		
 		Scanner sc = new Scanner(System.in);
