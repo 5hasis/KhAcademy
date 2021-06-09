@@ -5,6 +5,7 @@ import beans.ProductDto;
 
 public class Test05_1 {
 	public static void main(String[] args) throws Exception {
+		//Q : product에 상품정보를 등록하는 코드를 구현
 		
 		ProductDto productDto = new ProductDto();
 		productDto.setName("스크류바");
