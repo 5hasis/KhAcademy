@@ -10,7 +10,7 @@ public class Test03 {
 //		= 멤버가 존재함
 //		= 미리 객체를 만들어놓고 만들어진 객체만 이용할 수 있도록 제한을 걸어둔 형태(생성제한)
 		
-//		Runtime r = new Runtime();//직접 생성한다
+//		Runtime r = new Runtime();//직접 생성한다.
 		Runtime r = Runtime.getRuntime();//생성을 부탁한다
 		
 //		exec()를 이용하면 외부 커맨드를 사용할 수 있다.
