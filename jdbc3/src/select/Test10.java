@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 public class Test10 {
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		//2. 사용자에게 아이디를 입력받아 Member 테이블에서 해당 인원의 정보를 출력. 없으면 없다고 출력
 		
 		Scanner sc = new Scanner(System.in);
 		System.out.print("아이디 입력 : ");

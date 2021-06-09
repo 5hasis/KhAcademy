@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 public class Test11_1 {
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		//3. 사용자에게 아이디와 비밀번호를 입력받아 Member 테이블을 이용하여 로그인 작업을 수행 후 출력
 		
 		Scanner sc = new Scanner(System.in);
 		System.out.print("아이디 입력 : ");
