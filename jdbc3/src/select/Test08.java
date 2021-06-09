@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 public class Test08 {
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
-//		Q. 단일 조회 살펴보기
+//		Q. 단일 조회 살펴보기.
 //		= 결과가 1개만 나오는 조회(안 나올 수는 있음)
 //		= 유니크(Unique) 또는 기본키(primary key)항목으로 조회할 경우 여기에 해당
 //		= 유사검색을 수행하면 안되고 일치하는 항목만 조회해야함
