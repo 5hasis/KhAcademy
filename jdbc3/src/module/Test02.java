@@ -6,6 +6,7 @@ import beans.MemberDao;
 public class Test02 {
 	public static void main(String[] args) throws Exception {
 		
+		//데이터 준비
 		Scanner sc = new Scanner(System.in);
 		System.out.print("아이디 입력 : ");
 		String memberId = sc.next();
