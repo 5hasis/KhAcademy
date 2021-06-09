@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class Test04 {
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
-//		목표 : select에 조건을 부여하여 목록을 조회
+//		목표 : select에 조건을 부여하여 목록을 조회.
 		
 		Scanner sc = new Scanner(System.in);
 		System.out.print("검색할 지점 : ");
