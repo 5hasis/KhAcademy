@@ -5,7 +5,7 @@ import beans.MemberDto;
 
 public class Test11 {
 	public static void main(String[] args) throws Exception {
-//		회원 단일 조회
+//		회원 단일 조회.
 
 		int member_no = 1;
 

@@ -5,7 +5,7 @@ import beans.MemberDto;
 
 public class Test11_1 {
 	public static void main(String[] args) throws Exception {
-//		회원 단일조회
+//		회원 단일조회.
 		
 //		데이터 준비
 		String memberId = "khacademy";

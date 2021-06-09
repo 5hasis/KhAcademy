@@ -5,7 +5,7 @@ import beans.MemberDto;
 
 public class Test11_2 {
 	public static void main(String[] args) throws Exception {
-//		아이디 중복검사 수행 후 회원가입을 진행(기능간의 조합)
+//		아이디 중복검사 수행 후 회원가입을 진행(기능간의 조합).
 		
 //		데이터 준비 : MemberDto(회원정보)
 		MemberDto memberDto = new MemberDto();
