@@ -15,6 +15,7 @@ public class Test06 {
 		int minPrice = sc.nextInt();
 		System.out.print("최대 금액 : ");
 		int maxPrice = sc.nextInt();
+		sc.close();
 		
 		Class.forName("oracle.jdbc.OracleDriver");
 		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "study", "study");
