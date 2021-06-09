@@ -23,10 +23,14 @@ public class Test12 {
 		
 		rs.next(); //이동
 		
-//		System.out.println(rs.getInt("count(*)"));
-		System.out.println("개수");
-		System.out.println(rs.getInt(1));
 		
+		if(rs.next()) {
+			System.out.println(rs.getInt("개수"));
+			System.out.println(rs.getInt(1));
+		}
+		else {
+			//절대 실행될 리 없음
+		}
 		
 		con.close();
 		
