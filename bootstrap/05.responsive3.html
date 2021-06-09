@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+            PC : 3단
+            Tablet : 2단
+            Mobile : 1단
+        */
+        *{
+            box-sizing: border-box;
+        }
+        .gallery > .gallery-image {
+            float:left;
+            width:33.3333%;
+            padding:15px;
+        }
+        .gallery::after {
+            content:"";
+            display: block;
+            clear:both;
+        }
+        .gallery > .gallery-image > img {
+            display: block;
+            width:100%;
+        }
+        .gallery > .gallery-image > span {
+            display: block;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 995px){
+            .gallery > .gallery-image {
+                width:50%;
+            }
+        }
+
+        @media screen and (max-width: 540px){
+            .gallery > .gallery-image {
+                width:100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Gallery Template</h1>
+
+    <div class="gallery">
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>        
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>        
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>        
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>        
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+        <div class="gallery-image">
+            <img src="https://via.placeholder.com/200x200?text=P">
+            <span>이미지 설명</span>
+        </div>
+    </div>
+
+</body>
+</html>
