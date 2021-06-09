@@ -4,7 +4,7 @@ import java.util.regex.Pattern;
 
 public class Test02 {
 	public static void main(String[] args) {
-//		System 클래스 : 외부 시스템에 대한 기능, 정보등을 이용.
+//		System 클래스 : 외부 시스템에 대한 기능, 정보등을 이용
 		
 //		시스템의 통로를 이용할 수 있다.
 //		- 표준 출력 스트림 : System.out
@@ -41,3 +41,4 @@ public class Test02 {
 		System.out.println("이 메세지는 나오지 않습니다");
 	}
 }
+
