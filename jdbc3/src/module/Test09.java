@@ -7,7 +7,7 @@ import beans.MemberDto;
 
 public class Test09 {
 	public static void main(String[] args) throws Exception {
-//		Q. 회원 검색
+//		Q. 회원 검색?
 		
 		String type = "member_id";
 		String keyword = "test";
