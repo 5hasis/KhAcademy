@@ -27,7 +27,7 @@ public class Test01 {
 		int count = ps.executeUpdate();
 		
 		if(count > 0) {
-			System.out.println("정상적으로 회원 탈퇴되었습니다.");
+			System.out.println("정상적으로 회원 탈퇴되었습니다. ");
 		}
 		else {
 			System.out.println("아이디 혹은 비밀번호가 일치하지 않습니다.");
