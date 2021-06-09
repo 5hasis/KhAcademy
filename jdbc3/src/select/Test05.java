@@ -18,7 +18,7 @@ public class Test05 {
 		Class.forName("oracle.jdbc.OracleDriver");
 		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "study", "study");
 		
-		//instr
+		//instr(컬럼명,찾고자하는거)>0
 		String sql = "select * from product where instr(name,?) > 0 order by asc";
 		
 		PreparedStatement ps = con.prepareStatement(sql);

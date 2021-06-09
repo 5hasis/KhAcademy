@@ -22,7 +22,7 @@ public class Test05_1 {
 		String sql = "select * from product where name like '%'||?||'%' order by asc";
 		
 		PreparedStatement ps = con.prepareStatement(sql);
-		ps.setString(1, keyword);
+		ps.setString(1,keyword);
 		
 		ResultSet rs = ps.executeQuery();
 		
