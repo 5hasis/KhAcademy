@@ -19,7 +19,7 @@ public class Test03 {
 				+ "from "
 				+ "wishlist W "
 				+ "inner join client C on W.client_no = C.client_no "
-				+ "inner join item I on W.item_no = I.item_no";
+				+ "inner join item I on W.item_no = I.item_no ";
 		
 		PreparedStatement ps = con.prepareStatement(sql);
 	
