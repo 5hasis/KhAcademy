@@ -4,7 +4,7 @@ import beans.MemberDao;
 
 public class Test01 {
 	public static void main(String[] args) throws Exception {
-//		Q. 우리가 만든 MemberDao라는 모듈을 이용하여 회원 탈퇴를 구현
+//		Q. 우리가 만든 MemberDao라는 모듈을 이용하여 회원 탈퇴를 구현.
 		
 //		데이터 준비
 		String memberId = "test12345";
