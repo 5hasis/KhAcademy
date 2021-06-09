@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 public class Test01_1 {
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
-//		R(read) 작업을 JDBC로 진행
+//		R(read) 작업을 JDBC로 진행.
 //		1. 목록 조회(데이터 여러개)
 //		2. 단일 조회(PK/Unique 조회 = 0개 또는 1개)
 //		3. 집계함수 조회(sum, max, min, avg, count,... = 무조건 1개)
