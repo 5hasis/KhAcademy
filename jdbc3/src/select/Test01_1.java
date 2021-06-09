@@ -21,7 +21,7 @@ public class Test01_1 {
 		
 		PreparedStatement ps = con.prepareStatement(sql);
 		
-//		ps.execute(); //실행만됨... select에 적합하지 않음
+//		ps.execute(); //실행만됨... select에 적합하지 않음.
 		ResultSet rs = ps.executeQuery(); //실행 후 결과 집합에 접근할 수 있도록 참조(rs) 제공
 		
 //		(주의) rs는 Connection(con)이 종료되기 전까지만 사용이 가능하므로 배치 순서에 유의

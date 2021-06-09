@@ -24,7 +24,7 @@ public class Test01 {
 //		ps.execute(); //실행만됨... select에 적합하지 않음
 		ResultSet rs = ps.executeQuery(); //실행 후 결과 집합에 접근할 수 있도록 참조(rs) 제공
 		
-//		이 반복문은 "데이터가 있을 경우"만큼만 실행
+//		이 반복문은 "데이터가 있을 경우"만큼만 실행.
 		while(rs.next()) {
 			System.out.println("데이터 발견");
 //			rs가 쳐다보고 있는 줄에서 academy_no 컬럼 추출
