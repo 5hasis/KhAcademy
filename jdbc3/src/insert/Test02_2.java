@@ -10,7 +10,7 @@ public class Test02_2 {
 //		 정적 SQL 방식의 문제점
 //		 1. 작성 불가 글자가 발생(ex : 외따옴표)
 //		 String menuName = "돌체'크림'콜드'브루";
-//		 2. SQL Injection 공격이 발생할 수 있음
+//		 2. SQL Injection 공격이 발생할 수 있음.
 		String menu_name = "'||(select menu_name from menu where menu_no=3)||'";
 		int menu_price = 3000;
 

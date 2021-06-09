@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class Test02_3 {
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 //		해결책 : 동적 SQL 생성
-//		=값을 구문과 섞이지 않도록 자체적으로 변조하여 전송한 뒤 조립하여 실행(DIY)
+//		=값을 구문과 섞이지 않도록 자체적으로 변조하여 전송한 뒤 조립하여 실행(DIY).
 		String menu_name ="프라푸치노";
 		int menu_price = 4000;
 		

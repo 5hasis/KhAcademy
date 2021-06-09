@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 public class Test02_1 {
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
-		//Q : 만약 값들을 미리 변수로 준비해둔 상태라면 어떤 식으로 코드를 작성하여 추가할까?
+		//Q : 만약 값들을 미리 변수로 준비해둔 상태라면 어떤 식으로 코드를 작성하여 추가할까??
 		String menuName = "카페라떼";
 		int menuPrice = 2200;
 		
