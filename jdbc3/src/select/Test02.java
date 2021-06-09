@@ -8,6 +8,7 @@ import java.sql.SQLException;
 
 public class Test02 {
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		//Q : Product 테이블의 데이터를 조회
 		
 		Class.forName("oracle.jdbc.OracleDriver");
 		
