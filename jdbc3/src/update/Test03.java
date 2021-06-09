@@ -14,6 +14,7 @@ public class Test03 {
 		String id = sc.next();
 		System.out.print("증정 포인트 입력 : ");
 		int point = sc.nextInt();
+		sc.close();
 		
 		Class.forName("oracle.jdbc.OracleDriver");
 		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "study", "study");
