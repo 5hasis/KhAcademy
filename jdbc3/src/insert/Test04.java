@@ -12,7 +12,7 @@ public class Test04 {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		//아이디, 비밀번호, 닉네임, 생년월일, 전화번호, 이메일
+		//아이디, 비밀번호, 닉네임, 생년월일, 전화번호, 이메일.
 		System.out.println("아이디 입력 : ");
 		String memberId = sc.next();
 		
@@ -35,25 +35,26 @@ public class Test04 {
 		
 		
 		try {
-		Class.forName("oracle.jdbc.OracleDriver");
-		
-		Connection con = DriverManager.getConnection(
-				"jdbc:oracle:thin:@localhost:1521:xe", "study", "study");
-		
-		String sql = "insert into member "
-				+ "values(member_seq.nextval, ?, ?, ?, ?, ?,sysdate, ?, 0, '일반')";
-		
-		PreparedStatement ps = con.prepareStatement(sql);
-		ps.setString(1, memberId);
-		ps.setString(2, memberPwd);
-		ps.setString(3, memberNickname);
-		ps.setString(4, memberBirth);
-		ps.setString(5, memberPhone);
-		ps.setString(6, memberEmail);
-		
-		ps.execute();
-		
-		con.close();
+			Class.forName("oracle.jdbc.OracleDriver");
+			
+			Connection con = DriverManager.getConnection(
+					"jdbc:oracle:thin:@localhost:1521:xe", "study", "study");
+			
+			String sql = "insert into member "
+					+ "values(member_seq.nextval, ?, ?, ?, ?, ?,sysdate, ?, 0, '일반')";
+			
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, memberId);
+			ps.setString(2, memberPwd);
+			ps.setString(3, memberNickname);
+			ps.setString(4, memberBirth);
+			ps.setString(5, memberPhone);
+			ps.setString(6, memberEmail);
+			
+			ps.execute();
+			
+			con.close();
+			System.out.println("회원 가입 완료");
 		}
 		catch(SQLIntegrityConstraintViolationException e){
 			System.out.println("이미 사용중인 아이디입니다.");
