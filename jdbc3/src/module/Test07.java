@@ -8,7 +8,7 @@ import beans.MemberDto;
 public class Test07 {
 	public static void main(String[] args) throws Exception {
 		
-//		MemberDao, MemberDto를 이용하여 회원목록을 번호순으로 출력
+//		MemberDao, MemberDto를 이용하여 회원목록을 번호순으로 출력.
 		
 //		데이터베이스 조회 : MemberDao ----> List<MemberDto>
 		MemberDao memberDao = new MemberDao();
