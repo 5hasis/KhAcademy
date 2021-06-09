@@ -5,7 +5,7 @@ import beans.AcademyDto;
 
 public class Test10 {
 	public static void main(String[] args) throws Exception {
-//		Q : DAO, DTO를 이용한 상세보기 구현
+//		Q : DAO, DTO를 이용한 상세보기 구현.
 		
 //		데이터 준비
 		int academy_no = 10;
