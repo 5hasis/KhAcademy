@@ -22,7 +22,7 @@ public class Test01 {
 //		(3) 실행
 		ps.execute();
 		
-//		4.데이터베이스 종료
+//		4.데이터베이스 종료.
 		con.close();
 		
 		System.out.println("성공!");
