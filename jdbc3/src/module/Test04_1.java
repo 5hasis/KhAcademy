@@ -5,7 +5,7 @@ import beans.MemberDto;
 
 public class Test04_1 {
 	public static void main(String[] args) throws Exception {
-//		Q : MemberDao와 MemberDto를 이용한 회원 등록
+//		Q : MemberDao와 MemberDto를 이용한 회원 등록.
 		
 //		데이터 준비 : MemberDto(회원정보)
 		MemberDto memberDto = new MemberDto();

@@ -4,7 +4,7 @@ import beans.MemberDao;
 
 public class Test04 {
 	public static void main(String[] args) throws Exception {
-//		Q : 회원등록 작업을 MemberDao를 이용하여 진행할 수 있을까?
+//		Q : 회원등록 작업을 MemberDao를 이용하여 진행할 수 있을까??
 		
 //		준비
 		String memberId = "khacademy";
