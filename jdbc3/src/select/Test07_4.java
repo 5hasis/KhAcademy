@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Test07_4 {
 	public static void main(String[] args) throws Exception{
-//		Q : 검색어 하나만이 아닌 분류(항목)까지 선택하여 검색할 수 있는가?
+//		Q : 검색어 하나만이 아닌 분류(항목)까지 선택하여 검색할 수 있는가??
 		
 //		데이터 준비
 		Scanner sc = new Scanner(System.in);

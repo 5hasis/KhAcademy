@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 
 public class Test07 {
 	public static void main(String[] args) throws Exception{
-//		Q : 검색어 하나만이 아닌 분류(항목)까지 선택하여 검색할 수 있는가?
+//		Q : 검색어 하나만이 아닌 분류(항목)까지 선택하여 검색할 수 있는가??
 		
 //		데이터 준비
 		String type = "type";//컬럼명 작성(name, type, ...)
