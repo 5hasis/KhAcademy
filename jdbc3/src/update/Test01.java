@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 public class Test01 {
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
-//		Q. academy 테이블의 데이터 수정
+//		Q. academy 테이블의 데이터 수정.
 		
 //		준비물 : 번호, 이름
 		int academy_no = 10;
