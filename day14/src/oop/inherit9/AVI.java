@@ -3,6 +3,7 @@ package oop.inherit9;
 public class AVI extends MediaFile{
 	
 	private float speed;
+	
 	public float getSpeed() {
 		return speed;
 	}
