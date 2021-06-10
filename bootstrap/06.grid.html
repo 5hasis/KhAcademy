@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 배우기</title>
+
+    <!-- bootstrap 이용을 위한 CSS 의존성 등록 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <style>
+
+    </style>
+
+    <!-- bootstrap 이용을 위한 JS 의존성 등록 (jQuery/popper/BS) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    <script>
+        
+    </script>
+
+</head>
+<body>
+    
+    <!--
+        bootstrap은 두 가지 컨테이너를 지원한다.
+        [1] .container : 폭 구간마다 최적화된 폭으로 변경되는 컨테이너
+        [2] .container-fluid : 화면 전체를 기준으로 하여 변경되는 컨테이너
+        컨테이너 내부에는 테이블을 만드는 느낌으로 줄(.row)과 칸(.col)을 배치한다.
+        
+        .container > .row > .col 또는 .container-fluid > .row > .col
+    -->
+
+    <div class="container-fluid">
+
+        <!--
+            [1] .row 안에 .col을 배치하면 배치된 .col 개수에 맞게 다단으로 배치된다.
+        -->
+        <div class="row">
+            <div class="col">.col</div>
+            <div class="col">.col</div>
+            <div class="col">.col</div>
+            <div class="col">.col</div>
+        </div>
+
+        <!--
+            [2] .row 안에 .col과 크기를 명시하여 배치하면 크기에 맞게 자리를 차지하며 다단 배치된다.
+            bootstrap은 화면 폭을 12등분하여 관리한다.
+            따라서 col 뒤에 크기를 명시할 경우 합이 12가 되어야 안정적인 형태로 배치된다.
+        -->
+        <div class="row">
+            <div class="col-3">.col-3</div>
+            <div class="col-9">.col-9</div>
+        </div>
+
+        <!--
+            [3] 간격을 두고 배치하고 싶은 경우 .offset을 사용
+            = .offset-1 + .col-10
+            = .offset-2 + .col-8
+            = .offset-3 + .col-6
+            = .offset-4 + .col-4
+        -->
+        <div class="row">
+            <div class="col-10 offset-1">가운데</div>
+            <div class="col-8 offset-2">가운데</div>
+            <div class="col-6 offset-3">가운데</div>
+            <div class="col-4 offset-4">가운데</div>
+        </div>
+
+        <!--
+            [4] 폭이 좁아지면 펼쳐지는 컬럼 배치
+            .col에 크기를 의미하는 키워드(sm/md/lg)를 추가하여 해당 구간에서 100%가 되도록 설정
+        -->
+        <div class="row">
+            <div class="col-4 offset-4">.col-4</div>
+            <div class="col-sm-4 offset-sm-4">.col-sm-4</div>
+            <div class="col-md-4 offset-md-4">.col-md-4</div>
+            <div class="col-lg-4 offset-lg-4">.col-lg-4</div>
+        </div>
+
+        <!--
+            [5] 줄 등에 여백을 부여하며 배치       
+            
+            m(margin), p(padding)
+            t(top), l(left), r(right), b(bottom), x(left/right), y(top/bottom)
+            크기는 0부터 5까지 존재하며 자동은 auto로 설정
+        -->
+        <div class="row mt-5">
+            <div class="col">테스트</div>
+        </div>
+
+
+        <!--
+            [6] 혼합형 배치
+            = 갤러리 샘플(response3.html)처럼 특정 구간마다 단을 다르게 설정할 수 있다.            
+        -->
+        <div class="row mt-5">
+            <div class="col-sm-6 col-md-4 col-lg-3">complex column</div>            
+            <div class="col-sm-6 col-md-4 col-lg-3">complex column</div>            
+            <div class="col-sm-6 col-md-4 col-lg-3">complex column</div>            
+            <div class="col-sm-6 col-md-4 col-lg-3">complex column</div>            
+            <div class="col-sm-6 col-md-4 col-lg-3">complex column</div>            
+            <div class="col-sm-6 col-md-4 col-lg-3">complex column</div>            
+            <div class="col-sm-6 col-md-4 col-lg-3">complex column</div>            
+            <div class="col-sm-6 col-md-4 col-lg-3">complex column</div>            
+            <div class="col-sm-6 col-md-4 col-lg-3">complex column</div>            
+            <div class="col-sm-6 col-md-4 col-lg-3">complex column</div>            
+            <div class="col-sm-6 col-md-4 col-lg-3">complex column</div>            
+            <div class="col-sm-6 col-md-4 col-lg-3">complex column</div>            
+        </div>
+    </div>
+
+</body>
+</html>
