@@ -13,7 +13,7 @@
 --%>
 
 <%
-	//테스트를 위해 DTO를 만들어서 첨부
+	//테스트를 위해 DTO를 만들어서 첨부.
 	QuizDto quizDto = new QuizDto();
 	quizDto.setQuizNo(5);
 	quizDto.setQuizContent("천만명이 말을 하면?");
