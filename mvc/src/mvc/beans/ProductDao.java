@@ -53,7 +53,7 @@ public class ProductDao {
 
 	public List<ProductDto> list() throws Exception {
 
-		Connection con = JdbcUtils.getConnection(USERNAME, PASSWORD);
+		Connection con = JdbcUtils.getConnection();
 
 		String sql = "select * from product";
 		PreparedStatement ps = con.prepareStatement(sql);
@@ -81,7 +81,7 @@ public class ProductDao {
 
 	public List<ProductDto> rank(int begin, int end) throws Exception {
 
-		Connection con = JdbcUtils.getConnection(USERNAME, PASSWORD);
+		Connection con = JdbcUtils.getConnection();
 
 		String sql = "select * from (" + "select TMP.*, rownum rn from ("
 				+ "select * from product order by price desc, no asc) TMP)" + "where rn between ? and ?";
@@ -109,7 +109,7 @@ public class ProductDao {
 
 	public List<ProductDto> search(String type, String keyword) throws Exception {
 
-		Connection con = JdbcUtils.getConnection(USERNAME, PASSWORD);
+		Connection con = JdbcUtils.getConnection();
 		String sql = "select * from product where instr(#1,?) > 0 order by #1 asc";
 		sql = sql.replace("#1", type);
 		PreparedStatement ps = con.prepareStatement(sql);
@@ -134,7 +134,7 @@ public class ProductDao {
 
 	// 단일조회 기능
 	public ProductDto get(int no) throws Exception {
-		Connection con = JdbcUtils.getConnection(USERNAME, PASSWORD);
+		Connection con = JdbcUtils.getConnection();
 
 		String sql = "select * from product where no = ?";
 		PreparedStatement ps = con.prepareStatement(sql);
@@ -163,7 +163,7 @@ public class ProductDao {
 	}
 	
 	public ProductDto get(String name) throws Exception {
-		Connection con = JdbcUtils.getConnection(USERNAME, PASSWORD);
+		Connection con = JdbcUtils.getConnection();
 
 		String sql = "select * from product where name = ?";
 		PreparedStatement ps = con.prepareStatement(sql);
@@ -193,7 +193,7 @@ public class ProductDao {
 	
 //	삭제 기능
 	public boolean delete(int no) throws Exception {
-		Connection con = JdbcUtils.getConnection(USERNAME, PASSWORD);
+		Connection con = JdbcUtils.getConnection();
 		
 		String sql = "delete product where no = ?";
 		PreparedStatement ps = con.prepareStatement(sql);
