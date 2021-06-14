@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+	스프링 전역(Global) 설정 파일
+	= 사용자 요청과 관계 없이 프로젝트 전반에 적용되어야하는 설정 또는 도구를 등록하는 파일
+	
+	= Spring-Beans : 스프링 객체에 등록된 관련된 내용을 지원하는 네임스페이스(기본)
+ -->
+
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
