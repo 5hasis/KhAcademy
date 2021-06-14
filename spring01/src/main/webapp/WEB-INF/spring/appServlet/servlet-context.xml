@@ -22,5 +22,7 @@
 	<!-- /hello라는 요청이 오면  HelloController를 실행해라! -->
 	<beans:bean name="/hello" class="com.kh.spring01.HelloController"></beans:bean>
 	
+	<!-- / 라는 요청이 오면 MainpageController를 실행해라 -->
+	<beans:bean name="/" class="com.kh.spring01.MainpageController"></beans:bean>
 	
 </beans:beans>
