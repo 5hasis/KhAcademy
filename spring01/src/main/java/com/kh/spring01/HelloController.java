@@ -23,7 +23,7 @@ public class HelloController implements Controller{
 		mv.addObject("Message", "스프링에 오신걸 환영합니다!");
 		mv.setViewName("/WEB-INF/views/hello.jsp"); //연결될 jsp경로
 		
-		return null;
+		return mv;
 	}
 
 }
