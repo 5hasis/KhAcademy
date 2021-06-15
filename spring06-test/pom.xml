@@ -156,12 +156,27 @@
 		</dependency>
 	
 		<!-- Test -->
+		<!-- 
+			Spring Test를 위해서 두가지 의존성이 필요
+			(1)Junit : 자바 진영의 단위 테스팅 도구
+			(2)Spring-Test : 스프링과 Junit을 연동하여 테스팅할 수 있는 도구
+			
+			<scope>test</scope> 배포할 때 제외
+		 -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.7</version>
+			<version>4.13.2</version>
 			<scope>test</scope>
 		</dependency>   
+		
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-test</artifactId>
+		    <version>${org.springframework-version}</version>
+		    <scope>test</scope>
+		</dependency>
+		
 		
 		<!-- Oracle 의존성 -->
 		<dependency>
