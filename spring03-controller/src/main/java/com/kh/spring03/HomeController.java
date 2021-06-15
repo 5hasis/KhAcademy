@@ -51,6 +51,7 @@ public class HomeController{
 	
 	//변수를 매개 변수에 선언하면 "파라미터"를 의미.
 	//- 파라미터임을 명시하고 싶다면 @RequestParam을 추가
+	//= 만약 명시한 형태에 맞지 않는 데이터가 온다면 400(Bad request) 오류 발생
 	@RequestMapping("/plus2")
 	public String plus2(
 			@RequestParam int a, 
@@ -63,6 +64,8 @@ public class HomeController{
 	//파라미터를 변수를 특정 객체에 자동 매핑할 수 있음
 	//= 매개변수에 객체를 선언하면 자동 매핑이 수행.
 	//= @ModelAttribute라고 명시하면 객체 내부에 매핑하라는 의미
+	//= 파라미터 이름이 객체의 변수명과 일치해야 자동 할당. = 폼이나 이런데서 넘어온 파라미터의 변수명과 일치해야함
+	// 아니면 @RequestParam("파라미터이름") 으로 설정
 	@RequestMapping("/plus3")
 	public String plus2(
 			@ModelAttribute TestDto testDto, Model model) {
