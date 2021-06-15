@@ -23,9 +23,9 @@
 			= 1.0.0부터는 배포 버전으로 간주(정식 출시가 되었다고 판단)
 	 -->
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.kh</groupId>
-	<artifactId>spring02</artifactId>
-	<name>spring02</name>
+	<groupId>여기</groupId>
+	<artifactId>안고치면</artifactId>
+	<name>안됩니다</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	
