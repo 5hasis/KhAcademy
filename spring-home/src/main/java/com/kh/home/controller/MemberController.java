@@ -78,4 +78,11 @@ public class MemberController {
 			return "login";
 		}
 	}
+	
+	@PostMapping("/chage_pw")
+	public String change_pw(@ModelAttribute String curPw, @ModelAttribute String newPw, HttpSession session) {
+		int memberNo = (int)session.getAttribute("memberNo");
+		memberDao.changPw(memberNo, curPw, newPw);
+		return "redirect:/";
+	}
 }

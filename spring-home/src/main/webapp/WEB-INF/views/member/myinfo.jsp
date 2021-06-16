@@ -50,9 +50,9 @@
 	
 	<!-- 이용 가능한 메뉴 구성 -->
 	<div class="row">
-		<a href="#" class="link-btn">비밀번호 변경</a>
+		<a href="${pageContext.request.contextPath}/member/change_pw" class="link-btn">비밀번호 변경</a>
 		<a href="<%=request.getContextPath()%>/member/myedit.jsp" class="link-btn">개인정보 변경</a>
-		<a href="<%=request.getContextPath()%>/member/exit.kh" class="link-btn">회원 탈퇴</a>
+		<a href="${pageContext.request.contextPath}/member/exit" class="link-btn">회원 탈퇴</a>
 	</div>
 </div>
 
