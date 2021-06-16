@@ -89,13 +89,25 @@ public class MemberDaoImpl implements MemberDao{
 
 
 	@Override
-	public void changPw(int memberNo, String curPw, String newPw) {
+	public void changePw(int memberNo, String curPw, String newPw) {
 		String sql = "update member set member_pw = ? where member_no = ? and member_pw = ?";
 		Object[] param = {newPw, memberNo, curPw};
 		jdbcTemplate.update(sql, param);
 		
 	}
 
+
+	@Override
+	public void changeInfo(MemberDto memberDto) {
+		String sql = "update member "
+				+ "set member_nick=?, member_birth=?, member_phone=?, member_email=? "
+				+ "where member_no=? and member_pw=?";
+		Object[] param = {
+				memberDto.getMemberNick(), memberDto.getMemberBirth(), memberDto.getMemberPhone(),
+				memberDto.getMemberEmail(), memberDto.getMemberNo(), memberDto.getMemberPw()
+		};
+		jdbcTemplate.update(sql, param);
+	}
 
 	@Override
 	public void exit(int memberNo) {

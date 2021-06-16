@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.kh.home.entity.MemberDto;
 import com.kh.home.repository.MemberDao;
@@ -85,16 +86,31 @@ public class MemberController {
 	}
 	
 	@PostMapping("/change_pw")
-	public String change_pw(@ModelAttribute String curPw, @ModelAttribute String newPw, HttpSession session) {
+	public String change_pw(@RequestParam String curPw, @RequestParam String newPw, HttpSession session) {
 		int memberNo = (int)session.getAttribute("memberNo");
-		memberDao.changPw(memberNo, curPw, newPw);
+		memberDao.changePw(memberNo, curPw, newPw);
 		return "redirect:/";
 	}
+	
+	@GetMapping("/change_info")
+	public String change_info(HttpSession session, Model model) {
+		int memberNo = (int)session.getAttribute("memberNo");
+		MemberDto memberDto = memberDao.myinfo(memberNo);
+		model.addAttribute("memberDto", memberDto);
+		return "member/change_info";
+	}
+
+	@PostMapping("/change_info")
+	public String change_info(@ModelAttribute MemberDto memberDto) {
+		memberDao.changeInfo(memberDto);
+		return "redirect:change_infoSuccess";
+	}
+	
 	
 	@GetMapping("/exit")
 	public String exit(HttpSession session) {
 		int memberNo = (int)session.getAttribute("memberNo");
 		memberDao.exit(memberNo);
-		return "/";
+		return "index";
 	}
 }

@@ -14,7 +14,7 @@
 	</div>
 	
 	<div class="row">
-		<h3><a href="join">로그인</a></h3>
+		<h3><a href="regist">로그인</a></h3>
 	</div>
 	<div class="row">
 		<h3><a href="<%=request.getContextPath()%>/index.jsp">메인 페이지</a></h3>

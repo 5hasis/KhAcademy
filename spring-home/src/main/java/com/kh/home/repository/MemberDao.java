@@ -6,6 +6,7 @@ public interface MemberDao {
 	void insert(MemberDto memberDto);
 	MemberDto login(MemberDto memberDto);
 	MemberDto myinfo(int memberNo);
-	void changPw(int memberNo, String curPw, String newPw);
+	void changePw(int memberNo, String curPw, String newPw);
+	void changeInfo(MemberDto memberDto);
 	void exit(int memberNo);
 }
