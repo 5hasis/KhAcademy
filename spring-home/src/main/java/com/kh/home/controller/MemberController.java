@@ -79,10 +79,22 @@ public class MemberController {
 		}
 	}
 	
-	@PostMapping("/chage_pw")
+	@GetMapping("/change_pw")
+	public String change_pw() {
+		return "member/change_pw";
+	}
+	
+	@PostMapping("/change_pw")
 	public String change_pw(@ModelAttribute String curPw, @ModelAttribute String newPw, HttpSession session) {
 		int memberNo = (int)session.getAttribute("memberNo");
 		memberDao.changPw(memberNo, curPw, newPw);
 		return "redirect:/";
+	}
+	
+	@GetMapping("/exit")
+	public String exit(HttpSession session) {
+		int memberNo = (int)session.getAttribute("memberNo");
+		memberDao.exit(memberNo);
+		return "/";
 	}
 }

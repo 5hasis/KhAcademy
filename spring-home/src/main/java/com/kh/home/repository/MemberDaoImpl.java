@@ -96,4 +96,12 @@ public class MemberDaoImpl implements MemberDao{
 		
 	}
 
+
+	@Override
+	public void exit(int memberNo) {
+		String sql = "delete from member where member_no = ?";
+		Object[] param = {memberNo};
+		jdbcTemplate.update(sql, param);
+	}
+
 }
