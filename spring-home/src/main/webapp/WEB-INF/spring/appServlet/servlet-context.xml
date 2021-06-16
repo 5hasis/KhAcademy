@@ -51,9 +51,9 @@
 	 -->
 	 <annotation-driven/>
 	 <!-- <resources location="/resources/" mapping="/res/**"></resources> -->
-	 <resources location="/resources/css" mapping="/css/**"></resources>
-	 <resources location="/resources/image" mapping="/image/**"></resources>
-	 <resources location="/resources/js" mapping="/js/**"></resources>
+	 <resources location="/resources/css/" mapping="/css/**"></resources>
+	 <resources location="/resources/image/" mapping="/image/**"></resources>
+	 <resources location="/resources/js/" mapping="/js/**"></resources>
 	 
 	
 </beans:beans>
