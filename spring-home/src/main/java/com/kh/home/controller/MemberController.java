@@ -1,5 +1,7 @@
 package com.kh.home.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,7 +29,7 @@ public class MemberController {
 	@PostMapping("/regist")
 	public String regist(@ModelAttribute MemberDto memberDto) {
 		memberDao.insert(memberDto);
-		return "redirect:regist_success"; //root로 이동(context path 생략)
+		return "redirect:regist_success"; 
 	}
 	
 	@GetMapping("/regist_success")
@@ -35,4 +37,30 @@ public class MemberController {
 		return "member/registSuccess";
 	}
 	
+	//로그인 요청 처리
+	@GetMapping("/login")
+	public String login() {
+		return "member/login";
+	}
+	
+	//세션이 처리상 필요할 경우 컨트롤러 메소드의 매개변수에 작성하면 자동으로 할당
+	@PostMapping("/login")
+	public String loging(@ModelAttribute MemberDto memberDto, HttpSession session) {
+		MemberDto find = memberDao.login(memberDto);
+		if(find != null) { //성공
+			//세션에 memberNo라는 이름으로 회원번호를 추가
+			session.setAttribute("memberNo", find.getMemberNo());
+			return "redirect:/"; //root로 이동(context path 생략)
+		}
+		else { //실패
+			return "redirect:login?error";
+		}
+	}
+	
+	//로그아웃 구현
+	@GetMapping("/logout")
+	public String logout(HttpSession session) {
+		session.removeAttribute("memberNo");
+		return "redirect:/";
+	}
 }
