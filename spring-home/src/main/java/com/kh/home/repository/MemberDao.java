@@ -4,4 +4,5 @@ import com.kh.home.entity.MemberDto;
 
 public interface MemberDao {
 	void insert(MemberDto memberDto);
+	MemberDto login(MemberDto memberDto);
 }

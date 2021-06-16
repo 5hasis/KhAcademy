@@ -10,11 +10,11 @@
 	</div>
 	
 	<div class="row">
-		<img src="<%=request.getContextPath()%>/image/background.jpg" width="100%">
+		<img src="${pageContext.request.contextPath}/image/background.jpg" width="100%">
 	</div>
 	
 	<div class="row">
-		<h3><a href="join.jsp">로그인</a></h3>
+		<h3><a href="join">로그인</a></h3>
 	</div>
 	<div class="row">
 		<h3><a href="<%=request.getContextPath()%>/index.jsp">메인 페이지</a></h3>

@@ -38,7 +38,7 @@
 							</c:when>
 							<c:otherwise>
 								<li><a href="${root}/member/regist">회원 가입</a></li>
-								<li><a href="">로그인</a></li>
+								<li><a href="${root}/member/login">로그인</a></li>
 							</c:otherwise>
 						</c:choose>
 					</ul>
