@@ -4,6 +4,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -61,6 +62,20 @@ public class MemberController {
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
 		session.removeAttribute("memberNo");
+		//session.invalidate(); //세션 만료(사라짐)
 		return "redirect:/";
+	}
+	
+	@GetMapping("/myinfo")
+	public String myinfo(HttpSession session, Model model) {
+		int memberNo = (int)session.getAttribute("memberNo");
+		MemberDto memberDto = memberDao.myinfo(memberNo);
+		if(memberDto != null) {
+			model.addAttribute("memberDto", memberDto);
+			return "member/myinfo";
+		}
+		else {
+			return "login";
+		}
 	}
 }

@@ -32,8 +32,8 @@
 					<ul>
 						<c:choose>
 							<c:when test="${isLogin}">
-								<li><a href="">로그아웃</a></li>
-								<li><a href="">내 정보 보기</a></li>
+								<li><a href="${root}/member/logout">로그아웃</a></li>
+								<li><a href="${root}/member/myinfo">내 정보 보기</a></li>
 								<li><a href="#">회원 조회/검색</a></li>
 							</c:when>
 							<c:otherwise>
