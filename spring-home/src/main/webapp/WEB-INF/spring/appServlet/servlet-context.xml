@@ -44,13 +44,18 @@
 		= location에는 배제시킬 위치를 작성
 		= mapping에는 연결 시킬 주소를 작성
 		= 활성화 태그 필요
+		
+		- mapping 주소가 들어오면 location에 연결 -> 이부분은 DispatcherServlet에서 빼라
 	 -->
 	 <!-- 
 	 	<mvc:resources></mvc:resources>
 	 	원래는 이렇게쓰는데 mvc가 기본 네임스페이스로 설정되어 있기 때문에 mvc: 빼두댐 
 	 -->
 	 <annotation-driven/>
-	 <!-- <resources location="/resources/" mapping="/res/**"></resources> -->
+	 <!-- 
+	 	<resources location="/resources/" mapping="/res/**"></resources> 
+	 	가상의 주소를 만들어서 사용가능 
+	 -->
 	 <resources location="/resources/css/" mapping="/css/**"></resources>
 	 <resources location="/resources/image/" mapping="/image/**"></resources>
 	 <resources location="/resources/js/" mapping="/js/**"></resources>

@@ -5,7 +5,14 @@
 
 <!-- 
 	<link rel="stylesheet" type="text/css" href="/resources/css/common.css">
-	<link rel="stylesheet" type="text/css" href="http://localhost8080/home/resources/css/layout.css"> 
+	<link rel="stylesheet" type="text/css" href="http://localhost8080/home/resources/css/layout.css">
+	<link rel="stylesheet" type="text/css" href="/home/resources/css/menu.css"> 
+-->
+
+<!-- 
+	<link rel="stylesheet" type="text/css" href="/res/css/common.css">
+	<link rel="stylesheet" type="text/css" href="http://localhost8080/home/res/css/layout.css">
+	<img src="res/image/dog.png"> 
 -->
 
 <jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
