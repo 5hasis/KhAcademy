@@ -1,5 +1,8 @@
+  
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+
 <jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
 
 <div class="container-600">
@@ -22,13 +25,12 @@
 		</div>
 		
 		<!-- 오류인 상황에는 오류 메세지를 추가해준다 -->
-		<%if(request.getParameter("error") != null){ %>
+		<c:if test="${param.error != null}">
 		<div class="row">
 			<h5 class="error">정보가 일치하지 않습니다</h5>
 		</div>
-		<%} %>
+		</c:if>
 	</form>
 </div>
 
 <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
-
