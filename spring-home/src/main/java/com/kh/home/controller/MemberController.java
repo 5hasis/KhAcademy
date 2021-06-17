@@ -67,17 +67,15 @@ public class MemberController {
 		return "redirect:/";
 	}
 	
-	@GetMapping("/myinfo")
+	//내정보
+	//@GetMapping("/myinfo")
+	@RequestMapping("/myinfo")
 	public String myinfo(HttpSession session, Model model) {
 		int memberNo = (int)session.getAttribute("memberNo");
-		MemberDto memberDto = memberDao.myinfo(memberNo);
-		if(memberDto != null) {
-			model.addAttribute("memberDto", memberDto);
-			return "member/myinfo";
-		}
-		else {
-			return "login";
-		}
+		MemberDto memberDto = memberDao.get(memberNo);
+
+		model.addAttribute("memberDto", memberDto);
+		return "member/myinfo";
 	}
 	
 	@GetMapping("/change_pw")
@@ -95,7 +93,7 @@ public class MemberController {
 	@GetMapping("/change_info")
 	public String change_info(HttpSession session, Model model) {
 		int memberNo = (int)session.getAttribute("memberNo");
-		MemberDto memberDto = memberDao.myinfo(memberNo);
+		MemberDto memberDto = memberDao.get(memberNo);
 		model.addAttribute("memberDto", memberDto);
 		return "member/change_info";
 	}

@@ -81,9 +81,10 @@ public class MemberDaoImpl implements MemberDao{
 
 
 	@Override
-	public MemberDto myinfo(int memberNo) {
+	public MemberDto get(int memberNo) {
 		String sql = "select * from member where member_no = ?";
 		Object[] param = {memberNo};
+		//return jdbcTemplate.query(sql, extractor, memberNo);
 		return jdbcTemplate.query(sql, extractor, param);
 	}
 
