@@ -23,7 +23,11 @@
 		</div>
 	</form>
 	
-	<!-- 오류인 상황에는 오류 메세지를 추가해준다 -->
+	<!-- 
+		오류인 상황에는 오류 메세지를 추가해준다 
+		not empty param.error는 다음 코드와 같당
+		-> param.error =! null && param.error != ""
+	-->
 	<c:if test="${param.error != null}">
 	<div class="row">
 		<h5 class="error">정보가 일치하지 않습니다</h5>
