@@ -104,11 +104,19 @@ public class MemberController {
 		return "redirect:change_infoSuccess";
 	}
 	
-	
-	@GetMapping("/exit")
+	//회원 탈퇴
+	@RequestMapping("/exit")
 	public String exit(HttpSession session) {
 		int memberNo = (int)session.getAttribute("memberNo");
-		memberDao.exit(memberNo);
-		return "index";
+		
+		memberDao.delete(memberNo);
+		session.removeAttribute("memberNo");
+		
+		return "redirect:goodbye";
+	}
+	
+	@GetMapping("/goodbye")
+	public String goodbye() {
+		return "member/goodbye";
 	}
 }

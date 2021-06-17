@@ -8,5 +8,5 @@ public interface MemberDao {
 	MemberDto get(int memberNo);
 	void changePw(int memberNo, String curPw, String newPw);
 	void changeInfo(MemberDto memberDto);
-	void exit(int memberNo);
+	boolean delete(int memberNo);
 }
