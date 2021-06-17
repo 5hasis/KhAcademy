@@ -84,5 +84,36 @@
 		<filter-name>encoding</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+	
+	<!-- 
+		LegacyFilter 등록
+		= Spring의 도움을 전혀 받을 수 없음.
+		= 데이터베이스 연결 도구 사용할 수 없음
+		= DI 사용 불가
+	 -->
+	 <filter>
+	 	<filter-name>legacyFilter</filter-name>
+	 	<filter-class>com.kh.spring08.filter.LegacyFilter</filter-class>
+	 </filter>
+	 <filter-mapping>
+	 	<filter-name>legacyFilter</filter-name>
+	 	<url-pattern>/test1/*</url-pattern>
+	 </filter-mapping>
+	 
+	 <!-- 
+	 	SpringFilter 등록
+	 	= 필터를 직접 등록하는 것이 아니라 대행 클래스를 등록(ex:스턴트맨)
+	 	= 프록시 필터
+	 	= org.springframework.web.filter.DelegatingFilterProxy
+	 	= filter-name에 등록할 Filter Bean의 ID를 적기(spring explorer에서 확인 가능)
+	  -->
+	  <filter>
+	  	<filter-name>springFilter</filter-name>
+	  	<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	  </filter>
+	  <filter-mapping>
+	  	<filter-name>springFilter</filter-name>
+	  	<url-pattern>/test2/*</url-pattern>
+	  </filter-mapping>
 
 </web-app>
