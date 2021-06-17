@@ -106,18 +106,35 @@ public class MemberController {
 		return "member/changePwSuccess";
 	}
 	
+	//회원 정보 변경
 	@GetMapping("/change_info")
 	public String change_info(HttpSession session, Model model) {
 		int memberNo = (int)session.getAttribute("memberNo");
 		MemberDto memberDto = memberDao.get(memberNo);
+		
 		model.addAttribute("memberDto", memberDto);
+		
+		//return "/WEB_INF/views/member/changeInfo.jsp";
 		return "member/changeInfo";
 	}
 
 	@PostMapping("/change_info")
-	public String change_info(@ModelAttribute MemberDto memberDto) {
-		memberDao.changeInfo(memberDto);
-		return "redirect:changeInfoSuccess";
+	public String change_info(@ModelAttribute MemberDto memberDto, HttpSession session) { //@ModelAttribute 이 안에다가 받아라?
+		int memberNo = (int)session.getAttribute("memberNo");
+		memberDto.setMemberNo(memberNo);
+		
+		boolean result = memberDao.changeInfo(memberDto);
+		if(result) {
+			return "redirec:change_info_success";
+		}
+		else {
+			return "redirect:change_info?error";
+		}
+	}
+	
+	@GetMapping("/change_info_success")
+	public String changeInfoSuccess() {
+		return "member/changeInfoSuccess";
 	}
 	
 	//회원 탈퇴

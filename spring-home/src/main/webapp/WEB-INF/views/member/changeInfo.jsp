@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
 
 <div class="container-600">
@@ -35,11 +35,11 @@
 			<input type="password" name="memberPw" required class="form-input form-input-underline">
 		</div>
 		<!-- 오류인 상황에는 오류 메세지를 추가해준다 -->
-		<%if(request.getParameter("error") != null){ %>
-		<div class="row">
-			<h5 class="error">정보가 일치하지 않습니다</h5>
-		</div>
-		<%} %>
+		<c:if test="${param.error != null}">
+			<div class="row">
+				<h5 class="error">정보가 일치하지 않습니다</h5>
+			</div>
+		</c:if>
 		<div class="row">
 			<input type="submit" value="수정하기" class="form-btn form-btn-negative">
 		</div>

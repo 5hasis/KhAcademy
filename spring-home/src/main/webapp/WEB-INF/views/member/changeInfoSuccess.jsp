@@ -10,6 +10,9 @@
 	<div class="row">
 		각종 이동을 위한 링크 또는 이미지
 	</div>
+	<div class="row">
+		<a href="${pageContext.request.contextPath}" class="link-btn">홈으로</a>
+	</div>
 </div>
 
 <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
