@@ -74,9 +74,9 @@
 	
 	<!-- 이용 가능한 메뉴 구성 -->
 	<div class="row">
-		<a href="#" class="link-btn">비밀번호 변경</a>
+		<a href="change_pw" class="link-btn">비밀번호 변경</a>
 		<a href="#" class="link-btn">개인정보 변경</a>
-		<a href="#" class="link-btn confirm-link" data-message="정말 탈퇴하시겠습니까?">회원 탈퇴</a>
+		<a href="exit" class="link-btn confirm-link" data-message="정말 탈퇴하시겠습니까?">회원 탈퇴</a>
 	</div>
 	
 	<div class="row text-left">

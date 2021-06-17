@@ -90,16 +90,17 @@ public class MemberDaoImpl implements MemberDao{
 
 
 	@Override
-	public void changePw(int memberNo, String curPw, String newPw) {
+	public boolean changePw(int memberNo, String curPw, String newPw) {
 		String sql = "update member set member_pw = ? where member_no = ? and member_pw = ?";
 		Object[] param = {newPw, memberNo, curPw};
-		jdbcTemplate.update(sql, param);
+		int count = jdbcTemplate.update(sql, param);
 		
+		return count>0;
 	}
 
 
 	@Override
-	public void changeInfo(MemberDto memberDto) {
+	public boolean changeInfo(MemberDto memberDto) {
 		String sql = "update member "
 				+ "set member_nick=?, member_birth=?, member_phone=?, member_email=? "
 				+ "where member_no=? and member_pw=?";
@@ -107,7 +108,9 @@ public class MemberDaoImpl implements MemberDao{
 				memberDto.getMemberNick(), memberDto.getMemberBirth(), memberDto.getMemberPhone(),
 				memberDto.getMemberEmail(), memberDto.getMemberNo(), memberDto.getMemberPw()
 		};
-		jdbcTemplate.update(sql, param);
+		int count = jdbcTemplate.update(sql, param);
+		
+		return count > 0;
 	}
 
 	@Override

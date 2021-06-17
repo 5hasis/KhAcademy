@@ -78,16 +78,32 @@ public class MemberController {
 		return "member/myinfo";
 	}
 	
+	//비밀번호 변경
 	@GetMapping("/change_pw")
-	public String change_pw() {
-		return "member/change_pw";
+	public String changePw() {
+		return "member/changePw";
 	}
 	
 	@PostMapping("/change_pw")
-	public String change_pw(@RequestParam String curPw, @RequestParam String newPw, HttpSession session) {
+	public String changePw(
+			@RequestParam(value="curPw") String curPassword, 
+			@RequestParam(value="newPw") String newPassword, 
+			HttpSession session) {
+		
 		int memberNo = (int)session.getAttribute("memberNo");
-		memberDao.changePw(memberNo, curPw, newPw);
-		return "redirect:/";
+		boolean result = memberDao.changePw(memberNo, curPassword, newPassword);
+		
+		if(result) {
+			return "redirect:change_pw_success";
+		}
+		else {
+			return "redirect:changePw?error";
+		}
+	}
+	
+	@GetMapping("/change_pw_success")
+	public String changePwSuccess() {
+		return "member/changePwSuccess";
 	}
 	
 	@GetMapping("/change_info")
@@ -95,13 +111,13 @@ public class MemberController {
 		int memberNo = (int)session.getAttribute("memberNo");
 		MemberDto memberDto = memberDao.get(memberNo);
 		model.addAttribute("memberDto", memberDto);
-		return "member/change_info";
+		return "member/changeInfo";
 	}
 
 	@PostMapping("/change_info")
 	public String change_info(@ModelAttribute MemberDto memberDto) {
 		memberDao.changeInfo(memberDto);
-		return "redirect:change_infoSuccess";
+		return "redirect:changeInfoSuccess";
 	}
 	
 	//회원 탈퇴
