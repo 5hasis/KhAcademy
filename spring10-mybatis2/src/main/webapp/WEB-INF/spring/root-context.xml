@@ -41,9 +41,31 @@
 		<property name="maxWaitMillis" value="3000"></property>
 	</bean>
 	
-	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+	<!-- 
+		Spring JDBC 도구 등록
+	 -->
+	 <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
 		<property name="dataSource" ref="dbcpSource"></property>
 	</bean>	
+	
+	<!-- 
+		mybatis 도구 등록
+		- SqlSessionFactoryBean : 스프링 연동용 SqlSessionFactory 생성 클래스
+			- dataSource : 데이터베이스 연결 객체 참조 설정
+			- configLocation : mybatis 환경 설정 파일 위치 설정
+			(Spring은 mybatis와는 다르게 classpath, filepath가 나뉘어져 있음에 주의)
+			- mapperLocations : mybatis mapper 파일 위치를 패턴으로 설정
+		- SqlSessionTemplate : 스프링 연동을 위한 SqlSession 생성 클래스
+	 -->
+	 <bean id="factory" class="org.mybatis.spring.SqlSessionFactoryBean">
+	 	<property name="dataSource" ref="dbcpSource"></property>
+	 	<property name="configLocation" value="classpath:mybatis/mybatis-config.xml"></property>
+	 	<property name="mapperLocations" value="classpath:mybatis/mapper/**/*-mapper.xml"></property>
+	 </bean>
+	 
+	 <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+	 	<constructor-arg index="0" ref="factory"></constructor-arg> <!-- 필수항목 -->
+	 </bean>
 	
 	<!-- 
 		root-context 에서는 다음과 같이 컴포넌트 스캐닝을 실시한다.
