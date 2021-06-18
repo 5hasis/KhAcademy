@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import com.kh.home.entity.MemberDto;
 
-@Repository
+//@Repository
 public class MemberDaoImpl implements MemberDao{
 	
 	@Autowired
