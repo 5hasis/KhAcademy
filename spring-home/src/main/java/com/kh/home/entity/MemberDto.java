@@ -1,11 +1,12 @@
 package com.kh.home.entity;
 
 import java.sql.Date;
-
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data @NoArgsConstructor 
+@Data @NoArgsConstructor @AllArgsConstructor @Builder
 public class MemberDto {
 	private int memberNo;
 	private String memberId;
