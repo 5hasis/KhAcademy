@@ -18,4 +18,5 @@ public class MemberDto {
 	private String memberEmail;
 	private int memberPoint;
 	private String memberGrade;
+	
 }
