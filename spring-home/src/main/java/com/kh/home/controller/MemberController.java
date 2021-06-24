@@ -1,5 +1,7 @@
 package com.kh.home.controller;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,11 +49,27 @@ public class MemberController {
 	
 	//세션이 처리상 필요할 경우 컨트롤러 메소드의 매개변수에 작성하면 자동으로 할당
 	@PostMapping("/login")
-	public String loging(@ModelAttribute MemberDto memberDto, HttpSession session) {
+	public String loging(
+			@ModelAttribute MemberDto memberDto, 
+			@RequestParam(required = false) String saveId,
+			HttpSession session,
+			HttpServletResponse response) {
+		
 		MemberDto find = memberDao.login(memberDto);
 		if(find != null) { //성공
 			//세션에 memberNo라는 이름으로 회원번호를 추가
 			session.setAttribute("memberNo", find.getMemberNo());
+			
+			//아이디 저장하기에 대한 쿠키 작업 추가
+			Cookie cookie = new Cookie("saveId", find.getMemberId());
+			if(saveId != null) { //체크한 경우
+//				cookie.setMaxAge(Integer.MAX_VALUE); //평생
+				cookie.setMaxAge(4*7*24*60*60); //4주
+			}
+			else { //체크 안한 경우
+				cookie.setMaxAge(0); 
+			}
+			response.addCookie(cookie);
 			return "redirect:/"; //root로 이동(context path 생략)
 		}
 		else { //실패

@@ -12,11 +12,24 @@
 	<form action="login" method="post">
 		<div class="row text-left">
 			<label>아이디</label>
-			<input type="text" name="memberId" required class="form-input form-input-underline">
+			<input type="text" name="memberId" required class="form-input form-input-underline" value="${cookie.saveId.value}">
 		</div>
 		<div class="row text-left">
 			<label>비밀번호</label>
 			<input type="password" name="memberPw" required class="form-input form-input-underline">
+		</div>
+		<div class="row text-left">
+			<label>
+				<c:choose>
+					<c:when test="${cookie.saveId == null }">
+						<input type="checkbox" name="saveId">
+					</c:when>
+					<c:otherwise>
+						<input type="checkbox" name="saveId" checked>
+					</c:otherwise>
+				</c:choose>
+				아이디 저장하기
+			</label>
 		</div>
 		<div class="row">
 			<input type="submit" value="로그인" class="form-btn form-btn-positive">
