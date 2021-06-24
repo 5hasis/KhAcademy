@@ -53,6 +53,14 @@ public class CookieController {
 		return "redirect:/";
 	}
 	
+	@RequestMapping("/show")
+	public String show(HttpServletResponse response) {
+		Cookie cookie = new Cookie("show", "");
+		cookie.setMaxAge(0);
+		response.addCookie(cookie);
+		return "redirect:/";
+	}
+	
 	@RequestMapping("/hide")
 	public String hide(HttpServletResponse response) {
 		//시간 계산
