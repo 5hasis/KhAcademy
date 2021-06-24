@@ -66,7 +66,7 @@
 				</li>
 				</c:if>
 				<li>
-					<a href="#">자유게시판</a>
+					<a href="${root}/board/boardList">자유게시판</a>
 					<ul>
 						<li><a href="">게시글 작성</a></li>
 						<li><a href="">게시글 목록</a></li>
