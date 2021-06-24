@@ -18,6 +18,7 @@
 
 <h2>visit : ${cookie.visit.value}</h2>
 <h2>visit : ${cookie["visit"].value}</h2>
+<h2>visit : ${requestScope.visit}</h2>
 
 <a href="create">쿠키 생성</a>
 <a href="delete">쿠키 삭제</a>
