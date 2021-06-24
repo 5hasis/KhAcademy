@@ -232,6 +232,17 @@
 		    <artifactId>commons-fileupload</artifactId>
 		    <version>1.4</version>
 		</dependency>
+		
+		<!-- 
+			spring transacrion 의존성
+			= spring-jdbc의 하위 의존성이므로 spring-jdbc만 있어도 사용이 가능
+		 -->
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
 		   
 	</dependencies>
 	

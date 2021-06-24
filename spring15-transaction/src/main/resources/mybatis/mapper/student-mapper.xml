@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="student">
+
+	<insert id="insert1">
+		insert into student values(100, '모나리자', 'mona@risa.com')	
+	</insert>
+	
+	<insert id="insert2">
+		insert into student values(100, '피카소', 'pica@sso.com')	
+	</insert>
+
+</mapper>
+
