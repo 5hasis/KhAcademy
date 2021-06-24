@@ -31,3 +31,16 @@
 		<h2>쿠키 있음</h2>
 	</c:otherwise>
 </c:choose>
+
+
+<c:if test = "${cookie.visit == null}">
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<script>
+		$(function(){
+			window.open("https://www.naver.com","naver", "width=400, height=400");
+		});
+	</script>
+	<div>
+		팝업광고
+	</div>
+</c:if>

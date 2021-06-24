@@ -31,11 +31,23 @@ public class CookieController {
 	
 	@RequestMapping("/create")
 	public String create(HttpServletResponse response) throws UnsupportedEncodingException {
-		String time = "2021-06-23";
+		String time = "쿠키에 한글 입력"; //"2021-06-23";
 		String encode = URLEncoder.encode(time, "UTF-8"); //불편한 값들에 대한 변환
 		Cookie cookie = new Cookie("visit", encode); //쿠키 객체를 (이름, 값)으로 생성, 유니코드나 띄어쓰기 들어가면 안댕! -> 그래서 encoder로 변환
 		cookie.setMaxAge(10); //쿠키의 유효시간을 초단위로 설정
 		response.addCookie(cookie); //쿠키를 사용자에게 보냄
+		return "redirect:/";
+	}
+	
+	/**
+	 * 쿠키를 삭제
+	 * = 기존의 쿠키와 동일한 이름 객체를 만들어 사용자에게 보내지만 0초 뒤에 소멸되도록 설정.
+	 * */
+	@RequestMapping("/delete")
+	public String delete(HttpServletResponse response) {
+		Cookie cookie = new Cookie("visit","");
+		cookie.setMaxAge(0);
+		response.addCookie(cookie);
 		return "redirect:/";
 	}
 	
