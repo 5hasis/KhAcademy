@@ -23,10 +23,11 @@ public class Test01 {
 
 	@Autowired
 	private SqlSessionFactory factory;
+	//factory에서 직접 세션을 만들어내야 commit이나 rollback을 수동으로 바꿀 수 있음
 	
 	@Test
 	public void test() {
-		SqlSession sqlSession = factory.openSession(false);
+		SqlSession sqlSession = factory.openSession(false); //auto commit 사용x
 		
 		try {
 			sqlSession.insert("student.insert1");
