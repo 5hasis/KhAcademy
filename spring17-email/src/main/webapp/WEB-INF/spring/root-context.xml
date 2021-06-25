@@ -98,5 +98,23 @@
 	 	= task namespace를 추가하고 annotation 활성화 설정 수행
 	  -->
 	  <task:annotation-driven />
+	  
+	  <!-- 
+		이메일 발송 도구 등록(JavaMailSenderImpl)
+	 -->
+	<bean id="sender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.gmail.com"></property>
+		<property name="port" value="587"></property>
+		<property name="username" value="ohasis1test"></property>
+		<property name="password" value="dhdktltm1test"></property>
+		
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+				<prop key="mail.smtp.debug">true</prop>
+			</props>
+		</property>
+	</bean>
 		
 </beans>
