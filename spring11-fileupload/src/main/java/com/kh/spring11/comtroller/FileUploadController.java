@@ -92,7 +92,7 @@ public class FileUploadController {
 		return "redirect:upload";
 	}
 	
-	//--------------------(과정)-----------------------
+	//--------------------(과정)------------------------
 	@PostMapping("/upload4")
 	public String upload5(@ModelAttribute StudentVO studentVO) {
 		//1-4. <학생 등록 트랜잭션(서비스)>
