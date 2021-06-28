@@ -104,7 +104,7 @@ public class FileDownloadController {
 		byte[] data = FileUtils.readFileToByteArray(target);
 		ByteArrayResource resource = new ByteArrayResource(data);
 		
-		return ResponseEntity.ok() //200
+		return ResponseEntity.ok() //200 
 					.contentLength(studentProfileDto.getProfileSize())
 //					.header(HttpHeaders.CONTENT_TYPE, studentProfileDto.getProfileContentType())
 //					.header(HttpHeaders.CONTENT_TYPE, "application/octet-stream")
