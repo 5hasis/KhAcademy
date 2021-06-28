@@ -10,6 +10,7 @@ import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -105,7 +106,9 @@ public class FileDownloadController {
 		
 		return ResponseEntity.ok() //200
 					.contentLength(studentProfileDto.getProfileSize())
-					.header(HttpHeaders.CONTENT_TYPE, studentProfileDto.getProfileContentType())
+//					.header(HttpHeaders.CONTENT_TYPE, studentProfileDto.getProfileContentType())
+//					.header(HttpHeaders.CONTENT_TYPE, "application/octet-stream")
+					.header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_OCTET_STREAM_VALUE)
 					.header(HttpHeaders.CONTENT_ENCODING, "UTF-8")
 					.header(HttpHeaders.CONTENT_DISPOSITION,"attachment; filename=\""+URLEncoder.encode(studentProfileDto.getProfileUploadName(), "UTF-8")+"\"")
 				.body(resource);
