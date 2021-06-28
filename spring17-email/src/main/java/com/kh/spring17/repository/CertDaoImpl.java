@@ -17,4 +17,12 @@ public class CertDaoImpl implements CertDao{
 		sqlSession.insert("cert.insert2", certDto);
 	}
 
+	@Override
+	public boolean check(CertDto certDto) {
+		CertDto find = sqlSession.selectOne("cert.check", certDto);
+//		if(find == null) return false;
+//		else return true;
+		return find != null;
+	}
+
 }
