@@ -25,4 +25,8 @@ public class CertDaoImpl implements CertDao{
 		return find != null;
 	}
 
+	@Override
+	public void deleteByEmail(String email) {
+		sqlSession.delete("cert.deleteByEmail", email);
+	}
 }

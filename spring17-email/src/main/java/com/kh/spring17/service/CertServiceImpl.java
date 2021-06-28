@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.kh.spring17.entity.CertDto;
 import com.kh.spring17.repository.CertDao;
@@ -44,6 +45,17 @@ public class CertServiceImpl implements CertService {
 		
 		sender.send(message);
 	}
+	
+	@Override
+	@Transactional
+	public boolean checkCertification(CertDto certDto) {
+		boolean result = certDao.check(certDto);
+		if(result) {
+			certDao.deleteByEmail(certDto.getEmail());
+		}
+		return result;
+	}
+	
 	
 }
 
