@@ -15,4 +15,9 @@ public class ViewController {
 		return "test1";//"/WEB-INF/views/test1.jsp"
 	}
 	
+	@GetMapping("/test2")
+	public String test2() {
+		return "test2";//"/WEB-INF/views/test1.jsp"
+	}
+	
 }
