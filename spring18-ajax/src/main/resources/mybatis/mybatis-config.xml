@@ -19,6 +19,7 @@
 	<!-- mybatis 클래스 별칭 설정 -->
 	<typeAliases>
 		<package name="com.kh.spring18.entity"/>
+		<package name="com.kh.spring18.vo"/>
 	</typeAliases>
 
 	
