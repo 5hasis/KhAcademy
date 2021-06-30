@@ -25,9 +25,10 @@ public class ProductDaoImpl implements ProductDao{
 //		return sqlSession.selectList("product.select02", name);
 		return sqlSession.selectList("product.select03", name);
 	}
-
+	
 	@Override
 	public List<ProductDto> search(ProductSearchVO productSearchVO) {
-		return sqlSession.selectList("product.allInOneSearch",productSearchVO);
+//		return sqlSession.selectList("product.allInOneSearch", productSearchVO);
+		return sqlSession.selectList("product.allInOneSearchWithPagination", productSearchVO);
 	}
 }

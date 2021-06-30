@@ -149,11 +149,39 @@
 				
 				//폼 입력값을 전송 가능한 형태로 불러오기
 				//= serialize()는 form에 입력된 데이터를 Query String 으로 변환하는 명령
+				
 				var formdata = $(this).serialize();
 				console.log(formdata);
 				
 				$.ajax({
 					url:"${pageContext.request.contextPath}/data/product/list2",
+					type:"get",
+					dataType:"json",
+					data:formdata,
+					success:function(resp){
+						$("#search-result").empty();
+						for(var i=0; i < resp.length; i++){
+							var template = $("#list-item-template").html();
+							template = template.replace("{{name}}", resp[i].name);
+							template = template.replace("{{type}}", resp[i].type);
+							template = template.replace("{{price}}", resp[i].price);
+							$("#search-result").append(template);
+						}
+					}
+				});
+			});
+			
+			$("#complex-search-form").submit(function(e){
+				e.preventDefault();				
+				
+				//폼 입력값을 전송 가능한 형태로 불러오기
+				//= serialize()는 form에 입력된 데이터를 Query String 으로 변환하는 명령
+				
+				var formdata = $(this).serialize();
+				console.log(formdata);
+				
+				$.ajax({
+					url:"${pageContext.request.contextPath}/data/product/list3",
 					type:"get",
 					dataType:"json",
 					data:formdata,
@@ -231,6 +259,61 @@
     				</div>
     				<div class="form-group">
     					<button type="submit" id="search-btn2" class="btn btn-outline-primary">검색</button>
+    				</div>
+    			</form>
+    		</div>
+    	</div>
+    	
+    	<!-- [3] 복합적인 항목들을 이용한 검색 -->
+    	<div class="row mt-3">
+    		<div class="col-md-10">
+    			<form id="complex-search-form" >
+    				<div class="form-group">
+    					<label>번호</label>
+	    				<input type="text" name="no" class="form-control">
+    				</div>
+    				<div class="form-group">
+    					<label>이름</label>
+	    				<input type="text" name="name" class="form-control">
+    				</div>
+    				<div class="form-group">
+    					<label>분류</label>
+	    				<input type="text" name="type" class="form-control">
+    				</div>
+    				<div class="form-group">
+    					<label>최소가격</label>
+	    				<input type="text" name="minPrice" class="form-control">
+    				</div>
+    				<div class="form-group">
+    					<label>최대가격</label>
+	    				<input type="text" name="maxPrice" class="form-control">
+    				</div>
+    				
+    				<!-- 정렬 관련 항목을 추가 -->
+    				<div class="form-group">
+    					<label>정렬방식</label>
+    					<select name="ordering" class="form-control">
+							<option value="no">번호순</option>
+							<option value="name">이름순</option>
+							<option value="type">분류별</option>
+							<option value="priceDesc">높은 가격 순</option>
+							<option value="priceAsc">낮은 가격 순</option>    				
+	    				</select>
+    				</div>    		
+    				
+    				<!-- 페이징 관련 항목을 추가(페이지네이션과 연동) -->
+    				<div class="form-group">
+    					<label>페이지 번호</label>
+    					<input type="text" name="page" class="form-control">
+    				</div>
+    				
+    				<div class="form-group">
+    					<label>데이터 표시 개수</label>
+    					<input type="text" name="size" class="form-control">
+    				</div>
+    				
+    				<div class="form-group">
+    					<button type="submit" class="btn btn-outline-primary">검색</button>
     				</div>
     			</form>
     		</div>
