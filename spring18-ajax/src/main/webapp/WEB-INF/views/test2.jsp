@@ -21,6 +21,94 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
     <script>
+		$(function(){
+			//테스트(1) : #search-btn을 누르면 목록 조회 요청을 발생
+			$("#search-btn").click(function(){
+				
+				$.ajax({
+					url : "${pageContext.request.contextPath}/data/product/list1",
+// 					url:"../data/product/list1",
+// 					data:{},
+					type:"get",
+					dataType:"json",
+					success:function(resp){
+// 						console.log("성공");
+// 						console.log(resp);
+// 						$("#search-result").html("");
+// 						$("#search-result").text("");
+						$("#search-result").empty();
+// 						첫 번째 방법 : 문자열로 작성하여 추가(가장 비효율적)
+// 						for(var i=0; i < resp.length; i++){
+							
+// 							//태그 생성(문자열)
+// 							var content = "";
+// 							content += "<div class='row product-item'>"
+// 							content += "<div class='col-4 p-2'>";
+// 							content += "<img src='https://via.placeholder.com/100x100?text=P' width='100%'>";
+// 							content += "</div>";
+// 							content += "<div class='col-8 p-2'>";
+// 							content += "<div class='row'>";
+// 							content += "<div class='col-12'>";
+// 							content += "<h5>"
+// 							content += resp[i].name;
+// 							content += "</h5>";
+// 							content += "</div>";
+// 							content += "</div>";
+// 							content += "<div class='row'>";
+// 							content += "<div class='col-12'>";
+// 							content += resp[i].type;
+// 							content += "</div>";
+// 							content += "</div>";
+// 							content += "<div class='row'>";
+// 							content += "<div class='col-12'>";
+// 							content += "판매가 : " + resp[i].price + "원";
+// 							content += "</div>";
+// 							content += "</div>";
+// 							content += "</div>";
+// 							content += "</div> ";
+// 							content += "</div> ";
+							
+// 							//태그 추가
+// 							$("#search-result").append(content);
+// 						}
+						
+// 						두 번째 방법 : 태그 생성 명령을 사용
+// 						= $("<div>") 로 작성하면 선택이 아니라 생성을 의미
+						
+						for(var i=0; i < resp.length; i++){
+							//태그 생성
+							var item = $("<div>").addClass("col-sm-6").addClass("col-md-4");
+							var row = $("<div>").addClass("row").addClass("product-item");
+							var leftDiv = $("<div>").addClass("col-4").addClass("p-2");
+							var rightDiv = $("<div>").addClass("col-8").addClass("p-2");
+							var img = $("<img>").attr("src", "https://via.placeholder.com/100x100?text=P").css("width", "100%");
+							var rightDivInner1 = $("<div>").addClass("row");
+							var rightDivInner2 = $("<div>").addClass("row");
+							var rightDivInner3 = $("<div>").addClass("row");
+							var rightDivInnerCol1 = $("<div>").addClass("col-12");
+							var rightDivInnerCol2 = $("<div>").addClass("col-12").text(resp[i].type);
+							var rightDivInnerCol3 = $("<div>").addClass("col-12").text("판매가 : "+resp[i].price+"원");
+							var rightDivInnerCol1Header = $("<h5>").text(resp[i].name);
+							
+							item.append(row);
+							row.append(leftDiv);
+							row.append(rightDiv);
+							leftDiv.append(img);
+							rightDiv.append(rightDivInner1).append(rightDivInner2).append(rightDivInner3);
+							rightDivInner1.append(rightDivInnerCol1);
+							rightDivInnerCol1.append(rightDivInnerCol1Header);
+							rightDivInner2.append(rightDivInnerCol2);
+							rightDivInner3.append(rightDivInnerCol3);
+							
+							//태그 추가
+							$("#search-result").append(item);
+						}
+						
+					},
+				});
+				
+			});
+		});
     </script>
 
 </head>
@@ -38,13 +126,13 @@
     	<!-- 검색화면 시작 -->
     	<div class="row">
     		<div class="col-md-10">
-    			<button class="btn btn-outline-primary">조회</button>
+    			<button id="search-btn" class="btn btn-outline-primary">조회</button>
     		</div>
     	</div>
     	<!-- 검색화면 종료 -->
     	
     	<!-- 검색결과 시작 -->
-    	<div class="row mt-5">
+    	<div class="row mt-5" id="search-result">
     		
     		<!-- 아이템 시작 -->
     		<div class="col-md-4 col-sm-6">
@@ -67,6 +155,7 @@
 						</div>
 					</div>
 				</div> 
+				
 				
 			</div>
 			<!-- 아이템 종료  -->
