@@ -7,11 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/view")
 public class ViewController {
-	
-	@RequestMapping("/")
-	public String home() {
-		return "index";//"/WEB-INF/views/index.jsp"
-	}
+
 	
 	@GetMapping("/basic")
 	public String basic() {
