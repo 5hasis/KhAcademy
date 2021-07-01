@@ -3,7 +3,7 @@
     
 <jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
 
-<h1>BasicServer 연결 예제</h1>
+<h1>MemberServer 연결 예제</h1>
 
 <button id="connect">연결</button>
 <button id="disconnect">종료</button>
@@ -21,7 +21,7 @@
 		//= Javascript에 내장된 WebSocket API 를 사용
 		
 		$("#connect").click(function(){
-			var uri = "ws://localhost:8080/spring19/basic";
+			var uri = "ws://localhost:8080/spring19/member";
 			window.socket = new WebSocket(uri);
 			
 			//생성 이후에 할 일(코드)들을 예약작업으로 설정 - callback 함수 설정

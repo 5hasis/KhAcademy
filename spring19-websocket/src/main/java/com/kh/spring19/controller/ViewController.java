@@ -8,9 +8,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/view")
 public class ViewController {
 
-	
 	@GetMapping("/basic")
 	public String basic() {
 		return "ws/basic";
+	}
+	
+	@GetMapping("/member")
+	public String member() {
+		return "ws/member";
 	}
 }
