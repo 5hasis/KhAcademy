@@ -8,6 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/view")
 public class ViewController {
 	
+	@RequestMapping("/")
+	public String home() {
+		return "index";//"/WEB-INF/views/index.jsp"
+	}
+	
 	@GetMapping("/basic")
 	public String basic() {
 		return "ws/basic";
