@@ -48,8 +48,18 @@
 				//console.log(arguments);
 				//console.log(arguments[0].data);
 				//console.log(message.data);
-				var tag = $("<p>").text(message.data);
+				//console.log(typeof message.data);
+				
+				var messageObject = JSON.parse(message.data);//String --> JSON Object
+				console.log(messageObject);
+				
+				var user = $("<span>").css("font-size", "1.3rem").text("["+messageObject.memberNick+"]");
+				var content = $("<span>").text(messageObject.message);
+				var tag = $("<div>");
+				
+				tag.append(user).append(content);
 				$("#message-area").append(tag);
+				
 				$("#user-input").val("");
 			};
 		});

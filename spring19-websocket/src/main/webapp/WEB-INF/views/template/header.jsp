@@ -6,4 +6,3 @@
 <a href="${pageContext.request.contextPath}">홈</a>
 <a href="${pageContext.request.contextPath}/member/login">로그인</a>
 <a href="${pageContext.request.contextPath}/member/logout">로그아웃</a>
-© 2021 GitHub, Inc.
