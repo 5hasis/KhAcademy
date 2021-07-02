@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
+<!-- ${sessionScope.memberNo} 여기서 sessionScope는 생략 가능 -->
 <h1>로그인 상태 : ${memberNo != null} , 회원번호 : ${memberNo}</h1>
 
 <a href="${pageContext.request.contextPath}">홈</a>

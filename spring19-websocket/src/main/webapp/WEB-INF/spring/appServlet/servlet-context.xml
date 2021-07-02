@@ -58,6 +58,7 @@
 	 -->
 	 <beans:bean id="basicServer" class="com.kh.spring19.ws.WebSocketBasicServer"></beans:bean>
 	 <beans:bean id="memberServer" class="com.kh.spring19.ws.WebSocketMemberServer"></beans:bean>
+	 <beans:bean id="channelServer" class="com.kh.spring19.ws.WebSocketChannelServer"></beans:bean>
 	 
 	 
 	  <websocket:handlers>
@@ -66,6 +67,12 @@
 		 	= ws://localhost:8080/spring19/basic
 		 -->
 	  	<websocket:mapping handler="basicServer" path="/basic"/>
+	  	
+	  	<!-- 
+			channelServer를 다음 주소에 할당한다
+			= ws://localhost:8080/spring19/channel
+		 -->
+		<websocket:mapping handler="channelServer" path="/channel"/>
 	  	
 	  	<!-- 
 			memberServer를 다음 주소에 할당함
