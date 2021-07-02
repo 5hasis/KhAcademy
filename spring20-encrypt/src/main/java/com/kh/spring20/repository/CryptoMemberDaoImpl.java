@@ -27,8 +27,14 @@ public class CryptoMemberDaoImpl implements CryptoMemberDao{
 
 	@Override
 	public CryptoMemberDto login(CryptoMemberDto cryptoMemberDto) {
-		// TODO Auto-generated method stub
-		return null;
+		CryptoMemberDto find = sqlSession.selectOne(
+							"cryptoMember.get", cryptoMemberDto.getMemberId());
+		boolean match = passwordEncoder.matches(cryptoMemberDto.getMemberPw(), find.getMemberPw()); //순서 꼭! 지키기!!
+		if(match) {
+			return find;
+		}
+		else {
+			return null;
+		}
 	}
-
 }
