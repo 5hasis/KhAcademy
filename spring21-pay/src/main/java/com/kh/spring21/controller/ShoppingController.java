@@ -79,6 +79,47 @@ public class ShoppingController {
 		return "redirect:"+readyVO.getNext_redirect_pc_url();
 	}
 	
+	@GetMapping("/success")
+	public String success(
+			HttpSession session,
+			@ModelAttribute KakaoPayApprovePrepareVO prepareVO) throws URISyntaxException {
+		//세션에서 데이터를 추출 후 삭제
+		prepareVO.setPartner_order_id((String)session.getAttribute("partner_order_id"));
+		prepareVO.setPartner_user_id((String)session.getAttribute("partner_user_id"));
+		prepareVO.setTid((String)session.getAttribute("tid"));
+		
+		session.removeAttribute("partner_order_id");
+		session.removeAttribute("partner_user_id");
+		session.removeAttribute("tid");
+		
+		KakaoPayApproveVO approveVO = payService.approve(prepareVO);
+		
+		//결제 정보 조회 페이지 또는 결제 성공 알림페이지로 리다이렉트 한다
+		return "redirect:historyDetail?paymentNo="+prepareVO.getPartner_order_id();
+	}
+
+	@Autowired
+	private PaymentDao paymentDao;
+	
+	@GetMapping("/history")
+	public String history(HttpSession session, Model model) {
+		int memberNo = (int)session.getAttribute("memberNo");
+		model.addAttribute("list", paymentDao.list(memberNo));
+		return "shop/history";
+	}
+	
+	@GetMapping("/historyDetail")
+	public String historyDetail(@RequestParam int paymentNo, Model model) throws URISyntaxException {
+		//결제 정보 조회
+		PaymentDto paymentDto = paymentDao.get(paymentNo);
+		model.addAttribute("paymentDto", paymentDto);
+		
+		//카카오 서버 조회
+		KakaoPaySearchVO searchVO = payService.search(paymentDto.getPaymentTid());
+		model.addAttribute("searchVO", searchVO);
+		
+		return "shop/historyDetail";
+	}
 
 }
 
