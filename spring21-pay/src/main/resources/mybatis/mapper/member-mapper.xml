@@ -24,7 +24,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			사용법 : #{데이터}
 	 -->
 	 
-	 
+	 <!-- 로그인 -->
+	<select id="login" parameterType="MemberDto" resultType="MemberDto">
+		select * from member 
+		where member_id = #{memberId} and member_pw = #{memberPw}
+	</select>
 	 
 
 	
