@@ -94,7 +94,7 @@ public class ShoppingController {
 		
 		KakaoPayApproveVO approveVO = payService.approve(prepareVO);
 		
-		//결제 정보 조회 페이지 또는 결제 성공 알림페이지로 리다이렉트 한다
+		//결제 정보 조회 페이지 또는 결제 성공 알림페이지로 리다이렉트 
 		return "redirect:historyDetail?paymentNo="+prepareVO.getPartner_order_id();
 	}
 
@@ -119,6 +119,15 @@ public class ShoppingController {
 		model.addAttribute("searchVO", searchVO);
 		
 		return "shop/historyDetail";
+	}
+	
+	@GetMapping("/refund")
+	public String refund(
+			//paymentNo, cancel_amount를 수신
+			@ModelAttribute KakaoPayCancelPrepareVO prepareVO
+			) throws URISyntaxException {
+		payService.cancel(prepareVO);
+		return "redirect:historyDetail?paymentNo="+prepareVO.getPaymentNo();
 	}
 
 }
