@@ -1,5 +1,7 @@
 package com.kh.spring21.repository;
 
-public interface MemberDao {
+import com.kh.spring21.entity.MemberDto;
 
+public interface MemberDao {
+	MemberDto login(MemberDto memberDto);
 }
