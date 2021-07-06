@@ -14,4 +14,7 @@ public class KakaoPayReadyPrepareVO {
 	private int quantity;
 	private int total_amount;
 	private int tax_free_amount;
+	
+	//상품번호를 추가
+	private int no;
 }
