@@ -2,7 +2,6 @@ package com.kh.spring21.service;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.UUID;
 
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -13,6 +12,8 @@ import org.springframework.web.client.RestTemplate;
 
 import com.kh.spring21.vo.KakaoPayApprovePrepareVO;
 import com.kh.spring21.vo.KakaoPayApproveVO;
+import com.kh.spring21.vo.KakaoPayCancelPrepareVO;
+import com.kh.spring21.vo.KakaoPayCancelVO;
 import com.kh.spring21.vo.KakaoPayReadyPrepareVO;
 import com.kh.spring21.vo.KakaoPayReadyVO;
 import com.kh.spring21.vo.KakaoPaySearchVO;
@@ -130,6 +131,37 @@ public class KakaoPayService implements PayService{
 		log.debug("searchVo = {}", searchVO);
 		
 		return searchVO;
+	}
+	
+	@Override
+	public KakaoPayCancelVO cancel(KakaoPayCancelPrepareVO prepareVO) throws URISyntaxException {
+		//[1] 요청 도구 생성
+		RestTemplate template = new RestTemplate();
+		
+		//[2] Http Header 생성(ex : 편지봉투)
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("Authorization", kakaoAk);
+		headers.add("Content-type", contentType);
+		
+		//[3] Http Body 생성(ex : 편지내용)
+		MultiValueMap<String, String> body = new LinkedMultiValueMap<>();
+		body.add("cid", cid);
+		body.add("tid", prepareVO.getTid());
+		body.add("cancel_amount", String.valueOf(prepareVO.getCancel_amount()));
+		body.add("cancel_tax_free_amount", String.valueOf(prepareVO.getCancel_tax_free_amount()));
+		
+		//[4] Http Header / Body 합성
+		HttpEntity<MultiValueMap<String, String>> entity = new HttpEntity<>(body, headers);
+		
+		//[5] 목적지 주소 작성
+		URI uri = new URI("https://kapi.kakao.com/v1/payment/cancel");
+		
+		//[6] 전송
+		KakaoPayCancelVO cancelVO = 
+				template.postForObject(uri, entity, KakaoPayCancelVO.class);
+		log.debug("cancelVO = {}", cancelVO);
+		
+		return cancelVO;
 	}
 	
 }
