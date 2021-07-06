@@ -1,14 +1,9 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
-<html>
-<head>
-	<title>Home</title>
-</head>
-<body>
-<h1>
-	Hello world!  
-</h1>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<P>  The time on the server is ${serverTime}. </P>
-</body>
-</html>
+<h1>결제 시스템</h1>
+
+
+<h2><a href="member/login">로그인</a></h2>
+<h2><a href="member/logout">로그아웃</a></h2>
