@@ -46,6 +46,18 @@ public class ShoppingController {
 		return "shop/detail";
 	}
 	
+	@PostMapping("/buy")
+	public String buy(
+			@RequestParam int no, @RequestParam int quantity,
+			Model model) {
+		ProductDto productDto = productDao.get(no);
+		model.addAttribute("productDto", productDto);
+		model.addAttribute("quantity", quantity);		
+		int total_amount = productDto.getPrice() * quantity;
+		model.addAttribute("total_amount", total_amount);
+		return "shop/buy";
+	}
+	
 
 }
 
