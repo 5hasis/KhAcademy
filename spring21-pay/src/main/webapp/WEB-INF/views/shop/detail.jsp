@@ -12,5 +12,10 @@
 	<li>유통기한 : ${productDto.expire}</li>
 </ul>
 
+<form action="${pageContext.request.contextPath}/shop/buy" method="post">
+	<input type="hidden" name="no" value="${productDto.no}">
+	<input type="number" name="quantity" value="1" min="1" required>
+	<input type="submit" value="주문하기">
+</form>
 
 

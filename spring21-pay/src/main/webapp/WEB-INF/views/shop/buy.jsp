@@ -16,5 +16,11 @@
 	<li>총 결제금액 : ${total_amount}</li>
 </ul>
 
-
+<form action="confirm" method="post">
+	<input type="hidden" name="no" value="${productDto.no}">
+	<input type="hidden" name="item_name" value="${productDto.name}">
+	<input type="hidden" name="quantity" value="${quantity}">
+	<input type="hidden" name="total_amount" value="${total_amount}">
+	<input type="submit" value="결제하기">
+</form>
 
