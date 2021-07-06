@@ -58,6 +58,27 @@ public class ShoppingController {
 		return "shop/buy";
 	}
 	
+	@Autowired
+	@Qualifier("kakaoPayService2")
+	private PayService payService;
+	
+	@PostMapping("/confirm")
+	public String confirm(
+			HttpSession session, 
+			@ModelAttribute KakaoPayReadyPrepareVO prepareVO
+			) throws URISyntaxException {
+		int memberNo = (int)session.getAttribute("memberNo");//회원번호 추출
+		prepareVO.setPartner_user_id(String.valueOf(memberNo));
+		
+		KakaoPayReadyVO readyVO = payService.ready(prepareVO);
+		
+		session.setAttribute("partner_order_id", readyVO.getPartner_order_id());
+		session.setAttribute("partner_user_id", readyVO.getPartner_user_id());
+		session.setAttribute("tid", readyVO.getTid());
+		
+		return "redirect:"+readyVO.getNext_redirect_pc_url();
+	}
+	
 
 }
 
