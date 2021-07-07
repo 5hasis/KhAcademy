@@ -1,6 +1,7 @@
 package com.kh.spring21.controller;
 
 import java.net.URISyntaxException;
+import java.util.Arrays;
 
 import javax.servlet.http.HttpSession;
 
@@ -27,6 +28,9 @@ import com.kh.spring21.vo.KakaoPayReadyPrepareVO;
 import com.kh.spring21.vo.KakaoPayReadyVO;
 import com.kh.spring21.vo.KakaoPaySearchVO;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Controller
 @RequestMapping("/shop")
 public class ShoppingController {
@@ -130,6 +134,13 @@ public class ShoppingController {
 		return "redirect:historyDetail?paymentNo="+prepareVO.getPaymentNo();
 	}
 
+	//다건 결제 확인 처리
+	@PostMapping("/buy2")
+	public String buy2(@RequestParam int[] no, Model model) {
+		log.debug("no = {}", Arrays.toString(no));
+		model.addAttribute("list", productDao.list(no));
+		return "shop/buy2";
+	}
 }
 
 
