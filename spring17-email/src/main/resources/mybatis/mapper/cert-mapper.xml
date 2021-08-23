@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 
+	매퍼 파일은 SQL 구문을 보관하는 파일을 말하며 일반적으로 "테이블당 1개" 만든다.
+	- namespace : 여러 개의 매퍼 중에 현재 매퍼를 식별하도록 지어주는 고유한 명칭(필수)
+ -->
+<mapper namespace="cert">
+	
+	<!-- 
+		구문 생성 : 종류에 맞는 구문을 해당 태그로 작성
+		- id : 외부에서 구문을 실행하기 위해 알아야 할 구문의 고유 식별값 
+		- parameterType : 외부에서 전달되는 데이터의 타입
+		- resultType : 조회 결과 형태(오로지 select에서만 사용가능)
+			- 목록이나 단일항목 모두 DTO로 취급한다
+			
+		mybatis에는 2종류의 바인딩이 존재
+		1. 정적 바인딩 : 있는 그대로의 데이터를 추가적인 처리 없이 구문에 할당(항목)	
+			사용법 : ${데이터}
+		2. 동적 바인딩 : 데이터를 형태에 맞게 해석하여 따옴표 등을 처리한 뒤 구문에 할당(데이터)
+			사용법 : #{데이터}
+	 -->
+	 
+	 <!-- 
+	 	인증 번호 등록 : 이메일과 인증번호를 현재 시간으로 등록
+	 	- insert : 단순 insert, 같은 이메일에 인증번호 여러번 생성이 불가능
+	 	- insert2 : 최조 insert, 이후 update를 수행하도록 구문 구현
+	  -->
+	 <insert id="insert" parameterType="CertDto">
+	 	insert into cert values(#{email}, #{no}, sysdate)
+	 </insert>
+	 
+	 <insert id="insert2" parameterType="CertDto">
+	 	<!-- 
+			cert 테이블을 이용하여 merge 작업을 수행
+			확인해야할 조건은 CertDto 안에 있는 email이 C(cert) 에 존재하는가
+			만약 발견했다면
+				해당 이메일에 대한 인증번호와 인증시간을 갱신하고
+			만약 발견하지 못했다면
+				이메일, 인증번호, 인증시간을 신규로 등록하도록 함
+		-->
+	 	merge into cert C using dual on(#{email} = C.email)
+	 	when matched then
+	 		update set C.no = #{no}, C.time = sysdate
+	 	when not matched then
+	 		insert(email, no, time) values(#{email}, #{no}, sysdate)
+	 </insert>
+	
+	 <!-- 
+	 	인증 번호 검사
+	 	= 부등로 등 XHTML에서 사용할 수 없는 문자가 있을 경우 허용 구문을 추가로 작성해야함
+	 	= <![CDATA[구문]]>
+	  -->
+	 <select id="check" parameterType="CertDto" resultType="CertDto">
+	 	<![CDATA[
+	 		select * from cert where email = #{email} and no = #{no} and time >= sysdate - 5/24/60
+	 	]]>
+	 </select>
+	 
+	 <!-- 
+	 	인증 번호 삭제
+	 	1. 이메일에 해당하는 인증번호 삭제
+	 	2. 5분이 지난 인증번호를 삭제(스케줄러 구동)
+	  -->
+	  <delete id="deleteByEmail" parameterType="string">
+		 <![CDATA[
+		 	delete cert where email = #{email}
+		 ]]>
+	 </delete>
+	  
+	 <delete id="deleteByTime" parameterType="string">
+		 <![CDATA[
+		 	delete cert where time < sysdate - 5/24/60
+		 ]]>
+	 </delete>
+	 
+
+	
+</mapper>

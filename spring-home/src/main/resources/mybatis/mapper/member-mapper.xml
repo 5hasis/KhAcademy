@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+	매퍼 파일은 SQL 구문을 보관하는 파일을 말하며 일반적으로 "테이블당 1개 만든당
+	namespace : 여러개의 매퍼 중에 현재 매퍼를 식별하도록 지어주는 고유한 명칭(필수)
+ -->
+
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+ 
+ <mapper namespace="member">
+ 	<insert id="regist" parameterType="MemberDto">
+ 		insert into member values(
+ 			member_seq.nextval, #{memberId}, #{memberPw}, #{memberNick}, #{memberBirth}, #{memberPhone}, sysdate, #{memberEmail}, 0, '일반')
+ 	</insert>
+ 	
+ 	<select id="login" parameterType="MemberDto" resultType="MemberDto">
+ 		select * from member where member_id = #{memberId} and member_pw = #{memberPw}
+ 	</select>
+ 	
+ 	<select id="get" parameterType="int" resultType="MemberDto">
+ 		select * from member where member_no = #{memberNo}
+ 	</select>
+ 	
+ 	<update id="changePw" parameterType="map">
+ 		update member set member_pw = #{newPw} where member_no = #{memberNo} and member_pw = #{curPw}
+ 	</update>
+ 	
+ 	<update id="changeInfo" parameterType="MemberDto">
+ 		update member 
+ 			set member_nick=#{memberNick}, member_birth=#{memberBirth}, member_phone=#{memberPhone}, member_email=#{memberEmail}
+		where member_no=#{memberNo} and member_pw=#{memberPw}
+ 	</update>
+ 	
+ 	<delete id="exit">
+ 		delete member where member_no = #{memberNo)
+ 	</delete>
+ 	
+ </mapper>
